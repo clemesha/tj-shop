@@ -1,0 +1,534 @@
+[
+  {
+    "name": "Greek Style Chicken Salad",
+    "sku": "083241",
+    "price": 5.49,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/83241.png"
+  },
+  {
+    "name": "Chopped Salad Blend",
+    "sku": "083284",
+    "price": 2.99,
+    "size": "9 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/83284.png"
+  },
+  {
+    "name": "Uncured Salami Snacker",
+    "sku": "080865",
+    "price": 2.69,
+    "size": "3 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/80865.png"
+  },
+  {
+    "name": "Deli Duo",
+    "sku": "080875",
+    "price": 3.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/80875.png"
+  },
+  {
+    "name": "Melissa's Peeled & Steamed Chestnuts",
+    "sku": "083742",
+    "price": 5.99,
+    "size": "6.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/83742.png"
+  },
+  {
+    "name": "Cranberry Orange Spinach Salad Kit",
+    "sku": "083019",
+    "price": 3.99,
+    "size": "9 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/83019.png"
+  },
+  {
+    "name": "Lasagna Soup",
+    "sku": "082758",
+    "price": 4.99,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/82758.png"
+  },
+  {
+    "name": "Sweet Onion Salad Kit",
+    "sku": "081724",
+    "price": 3.99,
+    "size": "10.25 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/81724.png"
+  },
+  {
+    "name": "Vanilla Bean Whipped Sweet Potatoes",
+    "sku": "082044",
+    "price": 5.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/82044.png"
+  },
+  {
+    "name": "Loaded Mashed Potatoes",
+    "sku": "081840",
+    "price": 5.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/81840.png"
+  },
+  {
+    "name": "Creamy Mac & Cheese",
+    "sku": "082279",
+    "price": 4.99,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/82279.png"
+  },
+  {
+    "name": "Thai Style Red Curry Soup",
+    "sku": "081307",
+    "price": 4.99,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/81307.png"
+  },
+  {
+    "name": "Lemony Chicken Orzo Soup",
+    "sku": "082331",
+    "price": 4.99,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/82331.png"
+  },
+  {
+    "name": "Antipasto Stick Prosciutto Wrapped Mozzarella Cheese",
+    "sku": "080876",
+    "price": 1.99,
+    "size": "1.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/80876.png"
+  },
+  {
+    "name": "Antipasto Stick Salami & Pepper Jack Cheese",
+    "sku": "081294",
+    "price": 1.99,
+    "size": "1.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/81294.png"
+  },
+  {
+    "name": "Unexpected Broccoli Cheddar Soup",
+    "sku": "081792",
+    "price": 4.99,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/81792.png"
+  },
+  {
+    "name": "Lemon Basil Pasta Salad",
+    "sku": "061301",
+    "price": 4.99,
+    "size": "11.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/61301.png"
+  },
+  {
+    "name": "Roasted Green Vegetables",
+    "sku": "081060",
+    "price": 4.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/81060.png"
+  },
+  {
+    "name": "Fiesta Salad with Shrimp",
+    "sku": "081837",
+    "price": 6.99,
+    "size": "11.11 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/81837.png"
+  },
+  {
+    "name": "Sugar Cookie Dough Hearts",
+    "sku": "079904",
+    "price": 3.99,
+    "size": "10.8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/79904.png"
+  },
+  {
+    "name": "Turkey Harvest Salad",
+    "sku": "057400",
+    "price": 5.99,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/57400.png"
+  },
+  {
+    "name": "Pizza Ranch Salad Kit",
+    "sku": "080125",
+    "price": 3.99,
+    "size": "11.62 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/80125.png"
+  },
+  {
+    "name": "Gluten Free Turkey Gravy",
+    "sku": "079623",
+    "price": 4.49,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/79623.png"
+  },
+  {
+    "name": "Organic Peeled & Cooked Chestnuts",
+    "sku": "057387",
+    "price": 5.99,
+    "size": "6.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/57387.png"
+  },
+  {
+    "name": "Caesar Broccoli Bake Kit",
+    "sku": "079721",
+    "price": 4.99,
+    "size": "14.15 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/79721.png"
+  },
+  {
+    "name": "Sweet Chili Mango Complete Salad Kit",
+    "sku": "079111",
+    "price": 3.99,
+    "size": "11.25 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/79111.png"
+  },
+  {
+    "name": "Caesar Salad with White Chicken Meat",
+    "sku": "006832",
+    "price": 4.99,
+    "size": "9 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/06832.png"
+  },
+  {
+    "name": "California Roll",
+    "sku": "077691",
+    "price": 5.99,
+    "size": "7.22 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/77691.png"
+  },
+  {
+    "name": "Vegetable Roll",
+    "sku": "077695",
+    "price": 5.99,
+    "size": "6.53 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/77695.png"
+  },
+  {
+    "name": "Prosciutto Wrapped Fresh Mozzarella Cheese",
+    "sku": "075847",
+    "price": 4.99,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/75847.png"
+  },
+  {
+    "name": "Classic Greek Salad",
+    "sku": "083579",
+    "price": 3.49,
+    "size": "9 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/83579.png"
+  },
+  {
+    "name": "Caesar Salad with Salmon",
+    "sku": "078792",
+    "price": 6.99,
+    "size": "8.25 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/78792.png"
+  },
+  {
+    "name": "Potato Salad",
+    "sku": "076629",
+    "price": 4.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/76629.png"
+  },
+  {
+    "name": "Egg Salad",
+    "sku": "057824",
+    "price": 4.99,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/57824.png"
+  },
+  {
+    "name": "Kung Pao Brussels Sprouts",
+    "sku": "076811",
+    "price": 5.99,
+    "size": "14 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/76811.png"
+  },
+  {
+    "name": "Avocado Ranch Salad Kit",
+    "sku": "072567",
+    "price": 3.99,
+    "size": "12.8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/72567.png"
+  },
+  {
+    "name": "All Butter Sugar Cookie Dough",
+    "sku": "076619",
+    "price": 3.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/76619.png"
+  },
+  {
+    "name": "Garlic & Asiago Cheese Dip",
+    "sku": "077488",
+    "price": 4.99,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/77488.png"
+  },
+  {
+    "name": "Kosher Dill Pickle Spears",
+    "sku": "076436",
+    "price": 4.49,
+    "size": "24 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/76436.png"
+  },
+  {
+    "name": "Kosher Dill Pickle Chips",
+    "sku": "076439",
+    "price": 4.49,
+    "size": "24 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/76439.png"
+  },
+  {
+    "name": "Sesame Miso Salad with Salmon",
+    "sku": "077316",
+    "price": 6.99,
+    "size": "10.25 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/77316.png"
+  },
+  {
+    "name": "Green Goddess Salad",
+    "sku": "077429",
+    "price": 5.99,
+    "size": "9.75 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/77429.png"
+  },
+  {
+    "name": "Lobster Bisque",
+    "sku": "076371",
+    "price": 4.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/76371.png"
+  },
+  {
+    "name": "Mediterranean Hummus Snack Pack with Pita Chips",
+    "sku": "097136",
+    "price": 2.99,
+    "size": "8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/97136.png"
+  },
+  {
+    "name": "Vegan Poke",
+    "sku": "074770",
+    "price": 4.99,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/74770.png"
+  },
+  {
+    "name": "Bruschetta Sauce",
+    "sku": "007904",
+    "price": 3.49,
+    "size": "14.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/07904.png"
+  },
+  {
+    "name": "Elote Chopped Salad Kit",
+    "sku": "074768",
+    "price": 3.99,
+    "size": "11.94 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/74768.png"
+  },
+  {
+    "name": "Organic Biscuits",
+    "sku": "073768",
+    "price": 4.49,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/73768.png"
+  },
+  {
+    "name": "Organic Crescent Rolls",
+    "sku": "073773",
+    "price": 3.99,
+    "size": "8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/73773.png"
+  },
+  {
+    "name": "Autumn Vegetable & White Bean Gratin",
+    "sku": "074901",
+    "price": 5.99,
+    "size": "17 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/74901.png"
+  },
+  {
+    "name": "White Bean Chicken Chili Soup",
+    "sku": "074689",
+    "price": 4.99,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/74689.png"
+  },
+  {
+    "name": "Creamy Cauliflower Mash",
+    "sku": "073799",
+    "price": 3.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/73799.png"
+  },
+  {
+    "name": "Dill-icious Chopped Salad Kit",
+    "sku": "074577",
+    "price": 3.99,
+    "size": "11.32 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/74577.png"
+  },
+  {
+    "name": "Mango Jicama Slaw",
+    "sku": "057099",
+    "price": 5.49,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/57099.png"
+  },
+  {
+    "name": "BBQ & Black Pepper Toscano Chopped Salad",
+    "sku": "073314",
+    "price": 3.49,
+    "size": "11 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/73314.png"
+  },
+  {
+    "name": "Lemon Chicken & Arugula Salad",
+    "sku": "097436",
+    "price": 5.49,
+    "size": "9.2 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/97436.png"
+  },
+  {
+    "name": "Tomato Feta Soup",
+    "sku": "058808",
+    "price": 4.79,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/58808.png"
+  },
+  {
+    "name": "Kettle Cooked Chicken Soup",
+    "sku": "056650",
+    "price": 4.99,
+    "size": "24 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/56650.png"
+  },
+  {
+    "name": "Greek Olive Medley",
+    "sku": "038956",
+    "price": 3.99,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/38956.png"
+  },
+  {
+    "name": "Harvest Apple Salad Kit",
+    "sku": "068904",
+    "price": 3.99,
+    "size": "9.2 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/68904.png"
+  },
+  {
+    "name": "Holiday Vegetable Hash",
+    "sku": "068896",
+    "price": 4.99,
+    "size": "18 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/68896.png"
+  },
+  {
+    "name": "Brussels Sprouts Sauté Kit",
+    "sku": "063625",
+    "price": 4.69,
+    "size": "13 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/63625.png"
+  },
+  {
+    "name": "Pumpkin Butternut Squash Bisque",
+    "sku": "060956",
+    "price": 4.79,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/60956.png"
+  },
+  {
+    "name": "Vegan Ranch Crunch Salad Kit",
+    "sku": "070670",
+    "price": 3.49,
+    "size": "13 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/70670.png"
+  },
+  {
+    "name": "Southwestern Chopped Salad Kit",
+    "sku": "058463",
+    "price": 3.49,
+    "size": "13.6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/58463.png"
+  },
+  {
+    "name": "Organic Coleslaw Kit",
+    "sku": "063491",
+    "price": 2.99,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/63491.png"
+  },
+  {
+    "name": "A Za'atar Tango Salad Kit",
+    "sku": "070309",
+    "price": 3.99,
+    "size": "9.25 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/70309.png"
+  },
+  {
+    "name": "Mexican Style Corn & Quinoa Salad",
+    "sku": "060047",
+    "price": 4.99,
+    "size": "14 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/60047.png"
+  },
+  {
+    "name": "Lemony Arugula Basil Salad Kit",
+    "sku": "066293",
+    "price": 3.99,
+    "size": "9.75 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/66293.png"
+  },
+  {
+    "name": "Mediterranean Style Orzo Pasta Salad",
+    "sku": "061302",
+    "price": 4.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/61302.png"
+  },
+  {
+    "name": "Tahini, Pepita & Apricot Slaw Kit",
+    "sku": "061353",
+    "price": 3.99,
+    "size": "14.25 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/61353.png"
+  },
+  {
+    "name": "Organic Caesar Salad Kit",
+    "sku": "061855",
+    "price": 4.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/61855.png"
+  },
+  {
+    "name": "Organic Mediterranean Style Salad Kit",
+    "sku": "062016",
+    "price": 3.99,
+    "size": "12.95 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/62016.png"
+  },
+  {
+    "name": "Peanut Udon Noodle Salad",
+    "sku": "067489",
+    "price": 4.99,
+    "size": "11.75 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/67489.png"
+  },
+  {
+    "name": "Organic Hearty Minestrone Soup",
+    "sku": "058304",
+    "price": 4.99,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/58304.png"
+  },
+  {
+    "name": "Peanut and Crispy Noodle Salad Kit",
+    "sku": "066094",
+    "price": 3.99,
+    "size": "14.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20501/66094.png"
+  }
+]

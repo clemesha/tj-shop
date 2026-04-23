@@ -1,0 +1,162 @@
+{
+  "Eggs": [
+    {
+      "name": "Kramer Farms Cage Free Hard-Boiled Eggs",
+      "sku": "081451",
+      "price": 3.49,
+      "size": "9.3 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20304/81451.png"
+    },
+    {
+      "name": "Organic Pasture Raised Large Brown Eggs",
+      "sku": "072270",
+      "price": 6.99,
+      "size": "1 Doz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20304/72270.png"
+    },
+    {
+      "name": "Pasture Raised Large Brown Eggs",
+      "sku": "062124",
+      "price": 5.99,
+      "size": "1 Doz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20304/62124.png"
+    },
+    {
+      "name": "Simply Eggless Plant Based Egg",
+      "sku": "074840",
+      "price": 4.99,
+      "size": "16 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20304/74840.png"
+    }
+  ],
+  "Butter": [
+    {
+      "name": "Butter with Parmesan, Garlic & Herb",
+      "sku": "079481",
+      "price": 2.99,
+      "size": "4 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20302/79481.png"
+    },
+    {
+      "name": "Butter with Brown Sugar & Maple Syrup",
+      "sku": "079482",
+      "price": 2.99,
+      "size": "4 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20302/79482.png"
+    },
+    {
+      "name": "Organic Buttery Plant-Based Spread",
+      "sku": "075762",
+      "price": 3.99,
+      "size": "13 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20302/75762.png"
+    },
+    {
+      "name": "Butter Quarters, Unsalted",
+      "sku": "006253",
+      "price": 2.99,
+      "size": "16 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20302/06253.png"
+    },
+    {
+      "name": "Butter Quarters, Salted",
+      "sku": "006252",
+      "price": 2.99,
+      "size": "16 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20302/06252.png"
+    },
+    {
+      "name": "Cultured Salted Butter",
+      "sku": "053720",
+      "price": 4.99,
+      "size": "8.8 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20302/53720.png"
+    },
+    {
+      "name": "New Zealand Salted Butter",
+      "sku": "067937",
+      "price": 3.29,
+      "size": "8 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20302/67937.png"
+    }
+  ],
+  "Bagels": [
+    {
+      "name": "Cheesy Bagels",
+      "sku": "079365",
+      "price": 3.49,
+      "size": "12 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20103/79365.png"
+    },
+    {
+      "name": "Almost Everything Bagels",
+      "sku": "060689",
+      "price": 2.69,
+      "size": "22 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20103/60689.png"
+    },
+    {
+      "name": "Plain Bagels",
+      "sku": "060687",
+      "price": 2.69,
+      "size": "22 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20103/60687.png"
+    },
+    {
+      "name": "Everything Bagels",
+      "sku": "092267",
+      "price": 2.99,
+      "size": "18 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20103/92267.png"
+    },
+    {
+      "name": "Plain Bagels",
+      "sku": "014589",
+      "price": 2.49,
+      "size": "18 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20103/14589.png"
+    },
+    {
+      "name": "Cinnamon Raisin Bagels",
+      "sku": "092172",
+      "price": 2.49,
+      "size": "18 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20103/92172.png"
+    },
+    {
+      "name": "Cinnamon Swirl Raisin Bagels",
+      "sku": "067823",
+      "price": 2.99,
+      "size": "18 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20103/67823.png"
+    },
+    {
+      "name": "Gluten Free Almost Everything Bagels",
+      "sku": "063164",
+      "price": 4.99,
+      "size": "14 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20103/63164.png"
+    },
+    {
+      "name": "Gluten Free Pumpkin Spice Bagels",
+      "sku": "066144",
+      "price": 4.99,
+      "size": "13 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20103/66144.png"
+    },
+    {
+      "name": "Pumpkin Bagels",
+      "sku": "056774",
+      "price": 2.99,
+      "size": "18 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20103/56774.png"
+    },
+    {
+      "name": "Pretzel Bagels ",
+      "sku": "052370",
+      "price": 2.69,
+      "size": "18 Oz",
+      "image": "https://www.traderjoes.com/content/dam/trjo/products/m20103/52370.png"
+    }
+  ]
+}

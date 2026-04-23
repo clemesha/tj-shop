@@ -1,0 +1,366 @@
+[
+  {
+    "name": "APPLE EACH OPAL",
+    "sku": "052688",
+    "price": 1.19,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/52688.png"
+  },
+  {
+    "name": "Apricots",
+    "sku": "031802",
+    "price": 2.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/31802.png"
+  },
+  {
+    "name": "Ataulfo Mangos",
+    "sku": "061226",
+    "price": 5.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/61226.png"
+  },
+  {
+    "name": "Avocados 4 count",
+    "sku": "112550",
+    "price": 3.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/12550.png"
+  },
+  {
+    "name": "Bananas",
+    "sku": "048053",
+    "price": 0.23,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/48053.png"
+  },
+  {
+    "name": "Berry Medley",
+    "sku": "083744",
+    "price": 4.49,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/83744.png"
+  },
+  {
+    "name": "Cantaloupe",
+    "sku": "020669",
+    "price": 3.49,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/20669.png"
+  },
+  {
+    "name": "Cape Gooseberries",
+    "sku": "091624",
+    "price": 3.49,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/91624.png"
+  },
+  {
+    "name": "Cara Cara Navel Oranges",
+    "sku": "094537",
+    "price": 3.99,
+    "size": "3 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/94537.png"
+  },
+  {
+    "name": "Cherry Tomatoes on the Vine",
+    "sku": "070500",
+    "price": 4.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/70500.png"
+  },
+  {
+    "name": "Dekopon Mandarins",
+    "sku": "074863",
+    "price": 5.49,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/74863.png"
+  },
+  {
+    "name": "Fresh Cranberries",
+    "sku": "022295",
+    "price": 2.29,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/22295.png"
+  },
+  {
+    "name": "Fresh Cut Pineapple Chunks",
+    "sku": "039884",
+    "price": 3.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/39884.png"
+  },
+  {
+    "name": "Fresh Figs",
+    "sku": "053210",
+    "price": 4.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/53210.png"
+  },
+  {
+    "name": "Fresh Organic Cranberries",
+    "sku": "075744",
+    "price": 1.99,
+    "size": "8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/75744.png"
+  },
+  {
+    "name": "Fruitful Medley",
+    "sku": "054991",
+    "price": 3.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/54991.png"
+  },
+  {
+    "name": "Fuyu Persimmons",
+    "sku": "095578",
+    "price": 0.89,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/95578.png"
+  },
+  {
+    "name": "Grapefruit, 5lb bag",
+    "sku": "094190",
+    "price": 5.99,
+    "size": "5 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/94190.png"
+  },
+  {
+    "name": "Hass Avocado",
+    "sku": "093474",
+    "price": 1.49,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/93474.png"
+  },
+  {
+    "name": "Honeycrisp Apples",
+    "sku": "093872",
+    "price": 1.29,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/93872.png"
+  },
+  {
+    "name": "Josie's Mandarins",
+    "sku": "051316",
+    "price": 3.49,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/51316.png"
+  },
+  {
+    "name": "Jumbo Pomegranate",
+    "sku": "056059",
+    "price": 2.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/56059.png"
+  },
+  {
+    "name": "Kishu Kisses Seedless Kishu Mandarins",
+    "sku": "079057",
+    "price": 4.99,
+    "size": "1 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/79057.png"
+  },
+  {
+    "name": "Mangos",
+    "sku": "078963",
+    "price": 1.49,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/78963.png"
+  },
+  {
+    "name": "Meyer Lemons",
+    "sku": "056880",
+    "price": 2.49,
+    "size": "1 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/56880.png"
+  },
+  {
+    "name": "Nectarines",
+    "sku": "058039",
+    "price": 3.99,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/58039.png"
+  },
+  {
+    "name": "Nectarines",
+    "sku": "093530",
+    "price": 7.99,
+    "size": "4 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/93530.png"
+  },
+  {
+    "name": "Organic Avocados 4 count",
+    "sku": "166061",
+    "price": 4.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/66061.png"
+  },
+  {
+    "name": "Organic Bananas",
+    "sku": "050116",
+    "price": 0.29,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/50116.png"
+  },
+  {
+    "name": "Organic Cranberries",
+    "sku": "075621",
+    "price": 3.29,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/75621.png"
+  },
+  {
+    "name": "Organic Fuyu Persimmons",
+    "sku": "065644",
+    "price": 3.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/65644.png"
+  },
+  {
+    "name": "Organic Kiwi",
+    "sku": "081677",
+    "price": 4.49,
+    "size": "1 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/81677.png"
+  },
+  {
+    "name": "Organic Pitted Medjool Dates",
+    "sku": "064778",
+    "price": 5.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/64778.png"
+  },
+  {
+    "name": "Organic Pomegranate",
+    "sku": "095577",
+    "price": 3.49,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/95577.png"
+  },
+  {
+    "name": "Organic Strawberries 1 Lb",
+    "sku": "080331",
+    "price": 5.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/strawberries.png"
+  },
+  {
+    "name": "Organic Strawberries 2 Lb",
+    "sku": "036745",
+    "price": 8.99,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/strawberries.png"
+  },
+  {
+    "name": "Peaches",
+    "sku": "093401",
+    "price": 7.99,
+    "size": "4 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/93401.png"
+  },
+  {
+    "name": "Pineapple",
+    "sku": "059817",
+    "price": 3.49,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/59817.png"
+  },
+  {
+    "name": "Plumcots™",
+    "sku": "098659",
+    "price": 3.69,
+    "size": "1 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/98659.png"
+  },
+  {
+    "name": "Raspberries",
+    "sku": "095018",
+    "price": 7.99,
+    "size": "18 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/raspberries.png"
+  },
+  {
+    "name": "Red and Green Grapes Duo",
+    "sku": "091984",
+    "price": 6.49,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/91984.png"
+  },
+  {
+    "name": "Saturn Peaches",
+    "sku": "096529",
+    "price": 3.99,
+    "size": "19 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/96529.png"
+  },
+  {
+    "name": "Seedless Lemons",
+    "sku": "074895",
+    "price": 2.99,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/74895.png"
+  },
+  {
+    "name": "Seedless Watermelon",
+    "sku": "091327",
+    "price": 5.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/91327.png"
+  },
+  {
+    "name": "Strawberries 1 Lb",
+    "sku": "035878",
+    "price": 3.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/strawberries.png"
+  },
+  {
+    "name": "Strawberries 2 Lb",
+    "sku": "078515",
+    "price": 6.99,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/strawberries.png"
+  },
+  {
+    "name": "Sugar Bee® Apple",
+    "sku": "078597",
+    "price": 1.29,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/78597.png"
+  },
+  {
+    "name": "Sugar Bee® Apples",
+    "sku": "079142",
+    "price": 4.99,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/79142.png"
+  },
+  {
+    "name": "Sugar Sweet Melon",
+    "sku": "095369",
+    "price": 3.49,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/95369.png"
+  },
+  {
+    "name": "Sweet Baby Thompson Seedless Grapes",
+    "sku": "061959",
+    "price": 2.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/61959.png"
+  },
+  {
+    "name": "Teeny Tiny Avocados 6 Count",
+    "sku": "075444",
+    "price": 3.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/75444.png"
+  },
+  {
+    "name": "Yellow Peaches",
+    "sku": "058040",
+    "price": 3.99,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/58040.png"
+  }
+]

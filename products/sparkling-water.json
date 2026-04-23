@@ -1,0 +1,1065 @@
+[
+  {
+    "name": "Black Cherry Vanilla Sparkling Water",
+    "sku": "177620",
+    "price": 3.79,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/77620.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Cranberry Clementine Sparkling Water",
+    "sku": "175201",
+    "price": 3.79,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/75201.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Green Apple Sparkling Water",
+    "sku": "173063",
+    "price": 3.79,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/73063.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Winter Sangria Sparkling Water",
+    "sku": "173086",
+    "price": 3.79,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/73086.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Grapefruit Sparkling Water",
+    "sku": "060321",
+    "price": 0.99,
+    "size": "1 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/60321.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Mandarin Orange Sparkling Water",
+    "sku": "094027",
+    "price": 0.99,
+    "size": "1 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/94027.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Raspberry Lime Sparkling Water",
+    "sku": "094028",
+    "price": 0.99,
+    "size": "1 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/94028.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Lime Flavored Sparkling Water",
+    "sku": "168699",
+    "price": 3.79,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/68699.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Plain Sparkling Water",
+    "sku": "094022",
+    "price": 0.99,
+    "size": "1 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/94022.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Lime Sparkling Water",
+    "sku": "094031",
+    "price": 0.99,
+    "size": "1 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/94031.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Raspberry Lime Sparkling Water",
+    "sku": "168701",
+    "price": 3.79,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/68701.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Lemon Sparkling Water",
+    "sku": "094030",
+    "price": 0.99,
+    "size": "1 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/94030.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Sparkling Watermelon Juice",
+    "sku": "165504",
+    "price": 3.99,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/65504.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Cranberry Clementine Sparkling Water",
+    "sku": "060320",
+    "price": 0.99,
+    "size": "1 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/60320.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Watermelon Lemonade Sparkling Water",
+    "sku": "168472",
+    "price": 3.79,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/68472.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Blueberry Lemonade Sparkling Water",
+    "sku": "165408",
+    "price": 3.79,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/65408.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Spindrift Island Punch Sparkling Water",
+    "sku": "181308",
+    "price": 7.49,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/81308.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Sparkling Tangerine Vanilla Water",
+    "sku": "181449",
+    "price": 3.79,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/81449.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Sparkling Green Apple Mineral Water",
+    "sku": "061720",
+    "price": 0,
+    "size": "1 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/61720.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Italian Sparkling Mineral Water",
+    "sku": "074702",
+    "price": 1.99,
+    "size": "25.4 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/74702.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Sparkling Green Apple Mineral Water",
+    "sku": "061552",
+    "price": 0.99,
+    "size": "1.25 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/61552.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Sparkling Coconut Water with Yuzu",
+    "sku": "163261",
+    "price": 3.99,
+    "size": "8.5 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/63261.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Purified Water",
+    "sku": "080802",
+    "price": 2.49,
+    "size": "10 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/80802.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Strawberry & Watermelon Marshmallows",
+    "sku": "080470",
+    "price": 2.99,
+    "size": "8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21002/80470.png",
+    "categories": [
+      "Products",
+      "Food",
+      "Snacks & Sweets",
+      "Candies & Cookies"
+    ]
+  },
+  {
+    "name": "Watermelon Freeze Dried Candies",
+    "sku": "080796",
+    "price": 3.99,
+    "size": "1.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21002/80796.png",
+    "categories": [
+      "Products",
+      "Food",
+      "Snacks & Sweets",
+      "Candies & Cookies"
+    ]
+  },
+  {
+    "name": "Watermelon Lip Mask",
+    "sku": "080786",
+    "price": 5.99,
+    "size": "0.7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m502/80786.png",
+    "categories": [
+      "Products",
+      "Everything Else",
+      "For the Face & Body"
+    ]
+  },
+  {
+    "name": "Organic Sour Apple Watermelon Fruit Leather Wrap",
+    "sku": "081316",
+    "price": 0.49,
+    "size": "0.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21003/81316.png",
+    "categories": [
+      "Products",
+      "Food",
+      "Snacks & Sweets",
+      "Nuts, Dried Fruits, Seeds"
+    ]
+  },
+  {
+    "name": "Crispy Dried Watermelon",
+    "sku": "076897",
+    "price": 2.99,
+    "size": "1.41 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21003/76897.png",
+    "categories": [
+      "Products",
+      "Food",
+      "Snacks & Sweets",
+      "Nuts, Dried Fruits, Seeds"
+    ]
+  },
+  {
+    "name": "Coconut Water",
+    "sku": "076006",
+    "price": 1.99,
+    "size": "16.9 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/76006.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Waterless Amaryllis",
+    "sku": "076407",
+    "price": 10.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m4/76407.png",
+    "categories": [
+      "Products",
+      "Flowers & Plants"
+    ]
+  },
+  {
+    "name": "Watermelon & Peach Macarons",
+    "sku": "073692",
+    "price": 5.49,
+    "size": "4.2 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20604/73692.png",
+    "categories": [
+      "Products",
+      "Food",
+      "From The Freezer",
+      "Cool Desserts"
+    ]
+  },
+  {
+    "name": "Seedless Watermelon",
+    "sku": "091327",
+    "price": 5.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20701/91327.png",
+    "categories": [
+      "Products",
+      "Food",
+      "Fresh Fruits & Veggies",
+      "Fruits"
+    ]
+  },
+  {
+    "name": "Coconut Water, 1L",
+    "sku": "097911",
+    "price": 3.49,
+    "size": "33.8 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/97911.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Watermelon Facial Mist",
+    "sku": "067614",
+    "price": 3.99,
+    "size": "3.4 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m502/67614.png",
+    "categories": [
+      "Products",
+      "Everything Else",
+      "For the Face & Body"
+    ]
+  },
+  {
+    "name": "Watermelon Cucumber Cooler",
+    "sku": "051854",
+    "price": 3.49,
+    "size": "64 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m301/51854.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Juices & More"
+    ]
+  },
+  {
+    "name": "Love, Olivia Watermelon Wine",
+    "sku": "070782",
+    "price": 3.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/70782.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Wine, Beer & Liquor"
+    ]
+  },
+  {
+    "name": "Cold Pressed Watermelon Juice",
+    "sku": "067383",
+    "price": 2.99,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m301/67383.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Juices & More"
+    ]
+  },
+  {
+    "name": "Single Origin Organic Coconut Water",
+    "sku": "065256",
+    "price": 2.49,
+    "size": "10 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/65256.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Rose Water Facial Toner",
+    "sku": "061905",
+    "price": 3.99,
+    "size": "4 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m502/61905.png",
+    "categories": [
+      "Products",
+      "Everything Else",
+      "For the Face & Body"
+    ]
+  },
+  {
+    "name": "Organic Watermelon Fruit Spread",
+    "sku": "067604",
+    "price": 2.99,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20903/67604.png",
+    "categories": [
+      "Products",
+      "Food",
+      "For the Pantry",
+      "Nut Butters & Fruit Spreads"
+    ]
+  },
+  {
+    "name": "Watermelon Overnight Face Mask",
+    "sku": "067501",
+    "price": 6.99,
+    "size": "2 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m502/67501.png",
+    "categories": [
+      "Products",
+      "Everything Else",
+      "For the Face & Body"
+    ]
+  },
+  {
+    "name": "Solid White Albacore Tuna in Water No Salt Added",
+    "sku": "074670",
+    "price": 1.99,
+    "size": "4.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20902/74670.png",
+    "categories": [
+      "Products",
+      "Food",
+      "For the Pantry",
+      "Packaged Fish, Meat, Fruit & Veg"
+    ]
+  },
+  {
+    "name": "Solid White Albacore Tuna in Water Sea Salt Added",
+    "sku": "074671",
+    "price": 1.99,
+    "size": "4.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20902/74671.png",
+    "categories": [
+      "Products",
+      "Food",
+      "For the Pantry",
+      "Packaged Fish, Meat, Fruit & Veg"
+    ]
+  },
+  {
+    "name": "Seltzer Water flavored with Lemon and Ginger Juice",
+    "sku": "162206",
+    "price": 3.29,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m302/62206.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Water (Sparkling & Still)"
+    ]
+  },
+  {
+    "name": "Sparkling Cranberry Ginger Brew Beverage",
+    "sku": "181782",
+    "price": 4.99,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/81782.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Non-Alcohol Sparkling Violette Tea",
+    "sku": "081760",
+    "price": 8.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/81760.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Sparkling Orange Flavored Espresso Tonic",
+    "sku": "180832",
+    "price": 3.99,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m301/80832.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Juices & More"
+    ]
+  },
+  {
+    "name": "Sparkling Tea & Lemonade",
+    "sku": "081051",
+    "price": 1.99,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m301/81051.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Juices & More"
+    ]
+  },
+  {
+    "name": "Sparkling Matcha Lemonade",
+    "sku": "079235",
+    "price": 1.99,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m301/79235.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Juices & More"
+    ]
+  },
+  {
+    "name": "Organic Sparkling Rosé Tea Beverage",
+    "sku": "077643",
+    "price": 1.99,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/77643.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Sparkling Guava Juice Beverage",
+    "sku": "178911",
+    "price": 3.99,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/78911.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Non-Alcoholic Blanc Sparkling Tea",
+    "sku": "077112",
+    "price": 8.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/77112.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Non-Alcoholic Rosé Sparkling Tea",
+    "sku": "077113",
+    "price": 8.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/77113.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Ginger Lemon Probiotic Sparkling Beverage",
+    "sku": "074573",
+    "price": 1.99,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/74573.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Tangerine Probiotic Sparkling Beverage",
+    "sku": "074572",
+    "price": 1.99,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/74572.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Sparkling Honeycrisp Apple Juice",
+    "sku": "075374",
+    "price": 1.69,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m301/75374.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Juices & More"
+    ]
+  },
+  {
+    "name": "Sparkling Pineapple Juice",
+    "sku": "174009",
+    "price": 3.99,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/74009.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Sparkling White Tea with Pomegranate Juice",
+    "sku": "173292",
+    "price": 3.99,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/73292.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Sparkling Pomegranate Punch Beverage",
+    "sku": "171896",
+    "price": 4.49,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/71896.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Sparkling Cranberry Ginger Beverage",
+    "sku": "169074",
+    "price": 3.99,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/69074.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "French Market Sparkling Lemonade",
+    "sku": "031737",
+    "price": 3.99,
+    "size": "1 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/31737.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Sparkling Cranberry Flavored Juice Blend",
+    "sku": "070644",
+    "price": 2.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/70644.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Sparkling Green Tea with Pineapple",
+    "sku": "170308",
+    "price": 3.99,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/70308.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Organic Sparkling Green Tea Beverage",
+    "sku": "063488",
+    "price": 1.49,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/63488.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Sparkling Lemonade 4 pk",
+    "sku": "168559",
+    "price": 3.99,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/68559.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Juices & More"
+    ]
+  },
+  {
+    "name": "Sparkling Black Tea with Peach Juice Beverage",
+    "sku": "168349",
+    "price": 3.99,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/68349.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Organic Sparkling Yerba Mate Beverage",
+    "sku": "063487",
+    "price": 1.49,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/63487.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Sparkling Strawberry Juice",
+    "sku": "167582",
+    "price": 3.99,
+    "size": "8.45 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/67582.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Juices & More"
+    ]
+  },
+  {
+    "name": "Sugar Plum Sparkling Beverage",
+    "sku": "069039",
+    "price": 3.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/69039.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Sparkling White Chardonnay Grape Juice",
+    "sku": "050174",
+    "price": 3.99,
+    "size": "25.36 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/50174.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Almond Creek Almond Flavored Sparkling Wine",
+    "sku": "081576",
+    "price": 6.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/81576.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Wine, Beer & Liquor"
+    ]
+  },
+  {
+    "name": "Opaline Brut Sparkling Wine",
+    "sku": "083835",
+    "price": 9.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/83835.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Wine, Beer & Liquor"
+    ]
+  },
+  {
+    "name": "Platinum Reserve Brut Rosé Napa Valley Sparkling Wine",
+    "sku": "083002",
+    "price": 14.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/83002.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Wine, Beer & Liquor"
+    ]
+  },
+  {
+    "name": "Platinum Reserve Blanc de Blancs Napa Valley Sparkling Wine",
+    "sku": "083001",
+    "price": 14.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/83001.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Wine, Beer & Liquor"
+    ]
+  },
+  {
+    "name": "Tarongino Frizzante Sparkling Orange Wine",
+    "sku": "081937",
+    "price": 12.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/81937.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Wine, Beer & Liquor"
+    ]
+  },
+  {
+    "name": "Triple Ginger Brew Sparkling Beverage",
+    "sku": "051857",
+    "price": 3.99,
+    "size": "25.4 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/51857.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Reserve North Coast Brut Sparkling Wine",
+    "sku": "093706",
+    "price": 9.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/93706.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Wine, Beer & Liquor"
+    ]
+  },
+  {
+    "name": "Platinum Reserve Brut Sparkling Wine Sonoma County",
+    "sku": "061550",
+    "price": 14.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/61550.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Wine, Beer & Liquor"
+    ]
+  },
+  {
+    "name": "Sparkling Apple Cider",
+    "sku": "012493",
+    "price": 3.49,
+    "size": "25.4 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m301/12493.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Juices & More"
+    ]
+  },
+  {
+    "name": "French Market Sparkling Pink Lemonade",
+    "sku": "036334",
+    "price": 3.99,
+    "size": "1 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/36334.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Organic Sparkling Lemon + Strawberry Apple Cider Vinegar Beverage",
+    "sku": "064432",
+    "price": 1.99,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/64432.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Juices & More"
+    ]
+  },
+  {
+    "name": "Organic Sparkling Ginger + Lemon Apple Cider Vinegar Beverage",
+    "sku": "064431",
+    "price": 1.99,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/64431.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Juices & More"
+    ]
+  },
+  {
+    "name": "L'Eclat Brut Rosé",
+    "sku": "069628",
+    "price": 14.99,
+    "size": "1.5 L",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/69628.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Wine, Beer & Liquor"
+    ]
+  },
+  {
+    "name": "Reserve Brut Rosé North Coast",
+    "sku": "055388",
+    "price": 9.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/55388.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Wine, Beer & Liquor"
+    ]
+  },
+  {
+    "name": "Opaline Pinot Noir Brut Rosé",
+    "sku": "066649",
+    "price": 9.99,
+    "size": "750 mL",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/66649.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Wine, Beer & Liquor"
+    ]
+  },
+  {
+    "name": "Something Spritzy Pineapple & Orange",
+    "sku": "078169",
+    "price": 1.99,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/78169.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  },
+  {
+    "name": "Hydrangea in Self Hydrating Pot",
+    "sku": "066005",
+    "price": 10.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m4/66005.png",
+    "categories": [
+      "Products",
+      "Flowers & Plants"
+    ]
+  },
+  {
+    "name": "Something Spritzy",
+    "sku": "076687",
+    "price": 1.99,
+    "size": "12 Fl Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m305/76687.png",
+    "categories": [
+      "Products",
+      "Beverages",
+      "Sodas & Mixers"
+    ]
+  }
+]

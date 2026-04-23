@@ -1,0 +1,828 @@
+[
+  {
+    "name": "Almond Butter Filled Pretzel Nuggets",
+    "sku": "070721",
+    "price": 4.49,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/70721.png"
+  },
+  {
+    "name": "Baked Pizza Flavored Pillow Crisps",
+    "sku": "075555",
+    "price": 1.99,
+    "size": "3.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/75555.png"
+  },
+  {
+    "name": "Bamba Peanut Snacks",
+    "sku": "058373",
+    "price": 1.99,
+    "size": "3.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/58373.png"
+  },
+  {
+    "name": "Bamba with Hazelnut Creme Filling",
+    "sku": "067265",
+    "price": 2.29,
+    "size": "3 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/67265.png"
+  },
+  {
+    "name": "BBQ Flavored Potato Chips",
+    "sku": "083368",
+    "price": 2.99,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/83368.png"
+  },
+  {
+    "name": "Buffalo Ranch Popcorn",
+    "sku": "080927",
+    "price": 2.99,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/80927.png"
+  },
+  {
+    "name": "Butter Toffee Pretzels",
+    "sku": "063872",
+    "price": 3.69,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/63872.png"
+  },
+  {
+    "name": "Carolina Gold Style BBQ Ridge Cut Potato Chips",
+    "sku": "071946",
+    "price": 2.69,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/71946.png"
+  },
+  {
+    "name": "Cashel Blue® Cheese Irish Potato Chips",
+    "sku": "079819",
+    "price": 2.99,
+    "size": "5.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79819.png"
+  },
+  {
+    "name": "Cheddar & Parmesan Cheese Snackers",
+    "sku": "079136",
+    "price": 1.99,
+    "size": "2.64 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79136.png"
+  },
+  {
+    "name": "Chile Lime Flavored Fried Pork Rinds",
+    "sku": "075410",
+    "price": 2.49,
+    "size": "3 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/75410.png"
+  },
+  {
+    "name": "Chili & Lime Flavored Rolled Corn Tortilla Chips",
+    "sku": "061420",
+    "price": 2.99,
+    "size": "9 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/61420.png"
+  },
+  {
+    "name": "Chips in a Pickle",
+    "sku": "070915",
+    "price": 2.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/70915.png"
+  },
+  {
+    "name": "Cornbread Crisps",
+    "sku": "058406",
+    "price": 2.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/58406.png"
+  },
+  {
+    "name": "Cracker Assortment",
+    "sku": "038981",
+    "price": 3.99,
+    "size": "13.8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/38981.png"
+  },
+  {
+    "name": "Crisp Crunchy Crisps",
+    "sku": "070518",
+    "price": 2.29,
+    "size": "4 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/70518.png"
+  },
+  {
+    "name": "Crispy Crunchy Champignon Mushroom Snacks",
+    "sku": "066922",
+    "price": 3.99,
+    "size": "2 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/66922.png"
+  },
+  {
+    "name": "Crispy Garlic",
+    "sku": "078302",
+    "price": 3.29,
+    "size": "4 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/78302.png"
+  },
+  {
+    "name": "Crispy Jalapeño Pieces",
+    "sku": "078280",
+    "price": 2.99,
+    "size": "5.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/78280.png"
+  },
+  {
+    "name": "Crunchy Curls",
+    "sku": "092752",
+    "price": 2.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/92752.png"
+  },
+  {
+    "name": "Crunchy Pops",
+    "sku": "076003",
+    "price": 2.49,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/76003.png"
+  },
+  {
+    "name": "Deli Sandwich Style Potato Chips",
+    "sku": "080153",
+    "price": 2.99,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/80153.png"
+  },
+  {
+    "name": "Elevated Cracker Assortment",
+    "sku": "079145",
+    "price": 7.99,
+    "size": "12.7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79145.png"
+  },
+  {
+    "name": "Entertaining Cracker Duo",
+    "sku": "071885",
+    "price": 3.99,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/71885.png"
+  },
+  {
+    "name": "Everything but the Bagel Seasoned Crackers",
+    "sku": "094599",
+    "price": 2.99,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/94599.png"
+  },
+  {
+    "name": "Everything But The Gluten Crackers",
+    "sku": "066811",
+    "price": 2.99,
+    "size": "4.2 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/66811.png"
+  },
+  {
+    "name": "Fall Leaf Corn Tortilla Chips",
+    "sku": "066065",
+    "price": 3.99,
+    "size": "14 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/66065.png"
+  },
+  {
+    "name": "Festively Shaped Pretzels",
+    "sku": "079176",
+    "price": 0.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79176.png"
+  },
+  {
+    "name": "Fig & Olive Crisps",
+    "sku": "053273",
+    "price": 3.99,
+    "size": "5.3 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/53273.png"
+  },
+  {
+    "name": "French Onion Popcorn",
+    "sku": "079952",
+    "price": 2.69,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79952.png"
+  },
+  {
+    "name": "Furikake Snack Mix",
+    "sku": "079824",
+    "price": 3.99,
+    "size": "7.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79824.png"
+  },
+  {
+    "name": "Garlic Butter Irish Potato Chips",
+    "sku": "079817",
+    "price": 2.99,
+    "size": "5.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79817.png"
+  },
+  {
+    "name": "Ghost Pepper Potato Chips",
+    "sku": "055294",
+    "price": 3.49,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/55294.png"
+  },
+  {
+    "name": "Gluten Free Cranberry Raisin Toasts",
+    "sku": "079654",
+    "price": 4.99,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79654.png"
+  },
+  {
+    "name": "Gluten Free Norwegian Crispbread",
+    "sku": "059721",
+    "price": 4.79,
+    "size": "7.55 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/59721.png"
+  },
+  {
+    "name": "Golden Rounds Crackers",
+    "sku": "094889",
+    "price": 2.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/94889-golden-rounds-crackers.png"
+  },
+  {
+    "name": "Grainless Tortilla Chips",
+    "sku": "069148",
+    "price": 2.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/69148.png"
+  },
+  {
+    "name": "Green Olive Flats Italian Lingue Crackers",
+    "sku": "075978",
+    "price": 3.29,
+    "size": "5.29 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/75978.png"
+  },
+  {
+    "name": "Hot Honey Popcorn",
+    "sku": "081527",
+    "price": 2.99,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/81527.png"
+  },
+  {
+    "name": "Italian Aperitivo Medley Snack Mix",
+    "sku": "079821",
+    "price": 2.69,
+    "size": "8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79821.png"
+  },
+  {
+    "name": "Jerk-Style Plantain Chips",
+    "sku": "062904",
+    "price": 1.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/62904.png"
+  },
+  {
+    "name": "Ketchup Flavored Lattice Potato Chips",
+    "sku": "082268",
+    "price": 3.49,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/82268.png"
+  },
+  {
+    "name": "Kettle Cooked Rosemary & Sea Salt Potato Chips",
+    "sku": "080600",
+    "price": 2.99,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/80600.png"
+  },
+  {
+    "name": "Key Lime Kettle Popcorn",
+    "sku": "072095",
+    "price": 2.29,
+    "size": "5.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/72095.png"
+  },
+  {
+    "name": "Korean Bugak Sticky Rice and Seaweed Crisps",
+    "sku": "082360",
+    "price": 3.29,
+    "size": "1.76 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/82360.png"
+  },
+  {
+    "name": "Korean Bugak Sticky Rice and Seaweed Crisps",
+    "sku": "082269",
+    "price": 3.29,
+    "size": "1.76 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/82269.png"
+  },
+  {
+    "name": "Mini Mochi Rice Nuggets",
+    "sku": "076825",
+    "price": 2.29,
+    "size": "3.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/76825.png"
+  },
+  {
+    "name": "Mini Pretzel Twists",
+    "sku": "080421",
+    "price": 2.69,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/80421.png"
+  },
+  {
+    "name": "Norwegian Sourdough Rye Chips",
+    "sku": "077301",
+    "price": 3.69,
+    "size": "4.6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/77301.png"
+  },
+  {
+    "name": "Ode to the Classic Potato Chip",
+    "sku": "096695",
+    "price": 3.29,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/96695.png"
+  },
+  {
+    "name": "Organic Blue Corn Tortilla Chips",
+    "sku": "094583",
+    "price": 3.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/94583.png"
+  },
+  {
+    "name": "Organic Brown Rice Cake Thins",
+    "sku": "068005",
+    "price": 2.49,
+    "size": "4.8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/68005.png"
+  },
+  {
+    "name": "Organic Cacio e Pepe Puffs",
+    "sku": "071323",
+    "price": 2.49,
+    "size": "4.9 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/71323.png"
+  },
+  {
+    "name": "Organic Coconut Crunchy Clusters",
+    "sku": "075822",
+    "price": 2.99,
+    "size": "5.3 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/75822.png"
+  },
+  {
+    "name": "Organic Corn Chip Dippers",
+    "sku": "092482",
+    "price": 2.79,
+    "size": "9.75 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/92482.png"
+  },
+  {
+    "name": "Organic Dark Chocolate Half-Coated Rice Cake Thins",
+    "sku": "067706",
+    "price": 2.79,
+    "size": "3.42 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/67706.png"
+  },
+  {
+    "name": "Organic Elote Corn Chip Dippers",
+    "sku": "060564",
+    "price": 2.99,
+    "size": "9.75 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/60564.png"
+  },
+  {
+    "name": "Organic Garlic Naan Crackers",
+    "sku": "065583",
+    "price": 3.49,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/65583.png"
+  },
+  {
+    "name": "Organic Naan Crackers",
+    "sku": "072676",
+    "price": 3.49,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/72676.png"
+  },
+  {
+    "name": "Organic Taralli and Friends Crackers",
+    "sku": "068840",
+    "price": 3.29,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/68840.png"
+  },
+  {
+    "name": "Oven-Baked Cheese Bites",
+    "sku": "057243",
+    "price": 3.29,
+    "size": "2.11 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/57243.png"
+  },
+  {
+    "name": "Pane Guttiau Paper Thin Sardinian Crackers",
+    "sku": "078571",
+    "price": 3.99,
+    "size": "8.8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/78571.png"
+  },
+  {
+    "name": "Papadums Lentil and Chickpea Crisps",
+    "sku": "070198",
+    "price": 2.99,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/70198.png"
+  },
+  {
+    "name": "Patio Potato Chips",
+    "sku": "062977",
+    "price": 2.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/62977.png"
+  },
+  {
+    "name": "Peanut Butter Caramel Coated Popcorn",
+    "sku": "070860",
+    "price": 3.79,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/70860.png"
+  },
+  {
+    "name": "Peanut Butter Filled Pretzel Nuggets",
+    "sku": "000691",
+    "price": 2.69,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/00691.png"
+  },
+  {
+    "name": "Phyllo Crisps",
+    "sku": "079177",
+    "price": 3.49,
+    "size": "2.8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79177.png"
+  },
+  {
+    "name": "Pink Lady Apple Chips",
+    "sku": "079722",
+    "price": 2.29,
+    "size": "2.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79722.png"
+  },
+  {
+    "name": "Piquant Popcorn",
+    "sku": "077933",
+    "price": 2.99,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/77933.png"
+  },
+  {
+    "name": "Pita Bite Crackers",
+    "sku": "090701",
+    "price": 2.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/90701.png"
+  },
+  {
+    "name": "Pita Chips",
+    "sku": "091053",
+    "price": 2.49,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/91053.png"
+  },
+  {
+    "name": "Pizza Party Potato Chips",
+    "sku": "078295",
+    "price": 1.49,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/78295.png"
+  },
+  {
+    "name": "Pizza Seasoned Crackers",
+    "sku": "077824",
+    "price": 2.49,
+    "size": "4.22 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/77824.png"
+  },
+  {
+    "name": "Plantain Chips",
+    "sku": "097208",
+    "price": 1.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/97208.png"
+  },
+  {
+    "name": "Plantain Crisps",
+    "sku": "062954",
+    "price": 2.79,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/62954.png"
+  },
+  {
+    "name": "Plantain Croutons",
+    "sku": "066408",
+    "price": 1.99,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/66408.png"
+  },
+  {
+    "name": "Popcorn In a Pickle",
+    "sku": "055428",
+    "price": 2.29,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/55428.png"
+  },
+  {
+    "name": "Pretzel Slims",
+    "sku": "087777",
+    "price": 2.49,
+    "size": "8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/87777.png"
+  },
+  {
+    "name": "Pretzel Sticks",
+    "sku": "012564",
+    "price": 2.49,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/12564.png"
+  },
+  {
+    "name": "Pumpkin Cranberry Crisps",
+    "sku": "051246",
+    "price": 3.99,
+    "size": "5.3 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/51246.png"
+  },
+  {
+    "name": "Pumpkin Spiced Teeny Tiny Pretzels",
+    "sku": "068636",
+    "price": 3.49,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21002/68636.png"
+  },
+  {
+    "name": "Quinoa and Black Bean infused Tortilla Chips",
+    "sku": "097226",
+    "price": 3.49,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/97226.png"
+  },
+  {
+    "name": "Raisin Rosemary Crisps",
+    "sku": "095281",
+    "price": 3.99,
+    "size": "5.3 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/95281.png"
+  },
+  {
+    "name": "Ranch Flavored Rolled Corn Tortilla Chips",
+    "sku": "083292",
+    "price": 2.99,
+    "size": "9 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/83292.png"
+  },
+  {
+    "name": "Red Chili Scalloped Crackers",
+    "sku": "063277",
+    "price": 1.49,
+    "size": "6.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/63277.png"
+  },
+  {
+    "name": "Ridge Cut Potato Chips with Sea Salt",
+    "sku": "091749",
+    "price": 4.49,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/91749.png"
+  },
+  {
+    "name": "Rosemary Croissant Croutons",
+    "sku": "072051",
+    "price": 3.99,
+    "size": "4.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/72051.png"
+  },
+  {
+    "name": "Rosemary Sfogliette Crackers",
+    "sku": "070151",
+    "price": 1.69,
+    "size": "6.35 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/70151.png"
+  },
+  {
+    "name": "Salted White Corn Tortilla Chips",
+    "sku": "038985",
+    "price": 3.49,
+    "size": "32 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/38985.png"
+  },
+  {
+    "name": "Scalloped Cracker Trio",
+    "sku": "057645",
+    "price": 3.99,
+    "size": "16.4 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/57645.png"
+  },
+  {
+    "name": "Sea Salted Saddle Potato Crisps",
+    "sku": "062910",
+    "price": 2.29,
+    "size": "5.2 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/62910.png"
+  },
+  {
+    "name": "Shishito Crisps",
+    "sku": "076055",
+    "price": 3.29,
+    "size": "1.05 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/76055.png"
+  },
+  {
+    "name": "Sour Cream & Onion Flavored Rings",
+    "sku": "072136",
+    "price": 1.99,
+    "size": "2.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/72136.png"
+  },
+  {
+    "name": "Spicy Chakri Mix",
+    "sku": "066400",
+    "price": 3.29,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/66400.png"
+  },
+  {
+    "name": "Spicy Cheese Crunchies",
+    "sku": "083669",
+    "price": 2.49,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/83669.png"
+  },
+  {
+    "name": "Spicy Tempura Seaweed Snack",
+    "sku": "078756",
+    "price": 3.49,
+    "size": "2.1 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/78756.png"
+  },
+  {
+    "name": "Spicy Tempura Seaweed Snack",
+    "sku": "074086",
+    "price": 3.49,
+    "size": "2.1 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/74086.png"
+  },
+  {
+    "name": "Step Up to the Snack Bar Mix",
+    "sku": "061167",
+    "price": 5.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/61167.png"
+  },
+  {
+    "name": "Stollen Crisps",
+    "sku": "076627",
+    "price": 4.29,
+    "size": "5.3 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/76627.png"
+  },
+  {
+    "name": "Strawberry & Jalapeño Crisps",
+    "sku": "071945",
+    "price": 3.99,
+    "size": "5.3 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/71945.png"
+  },
+  {
+    "name": "Sugared Rice Cracker Hearts",
+    "sku": "079949",
+    "price": 2.49,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79949.png"
+  },
+  {
+    "name": "Sugared Rice Cracker Stars",
+    "sku": "078793",
+    "price": 2.49,
+    "size": "6.35 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/78793.png"
+  },
+  {
+    "name": "Sweet & Spicy Rice Cracker Mix",
+    "sku": "079429",
+    "price": 2.69,
+    "size": "8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79429.png"
+  },
+  {
+    "name": "Sweet Onion Style Pretzel Twists",
+    "sku": "083530",
+    "price": 3.69,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/83530.png"
+  },
+  {
+    "name": "Sweet Plantain Chips",
+    "sku": "055085",
+    "price": 2.49,
+    "size": "5.3 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/55085.png"
+  },
+  {
+    "name": "Synergistically Seasoned Popcorn",
+    "sku": "067705",
+    "price": 2.49,
+    "size": "5.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/67705.png"
+  },
+  {
+    "name": "Thai Style Yellow Curry Flavored Potato Chips",
+    "sku": "083165",
+    "price": 2.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/83165.png"
+  },
+  {
+    "name": "Thanksgiving Stuffing Seasoned Kettle Chips",
+    "sku": "055288",
+    "price": 2.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/55288.png"
+  },
+  {
+    "name": "Thanksgiving Stuffing Seasoned Popcorn",
+    "sku": "077100",
+    "price": 2.99,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/77100.png"
+  },
+  {
+    "name": "Tom Yum Seasoned Snack Mix",
+    "sku": "078103",
+    "price": 3.79,
+    "size": "5.29 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/78103.png"
+  },
+  {
+    "name": "Trail Mix Crackers",
+    "sku": "065411",
+    "price": 3.49,
+    "size": "4.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/65411.png"
+  },
+  {
+    "name": "Vegetable Root Chips",
+    "sku": "078301",
+    "price": 3.29,
+    "size": "7.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/78301.png"
+  },
+  {
+    "name": "Vegetable Root Chips",
+    "sku": "079890",
+    "price": 3.29,
+    "size": "7.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79890.png"
+  },
+  {
+    "name": "Wheat Crisp Crackers",
+    "sku": "079747",
+    "price": 2.49,
+    "size": "9 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/79747.png"
+  },
+  {
+    "name": "White Cheddar Popcorn",
+    "sku": "005985",
+    "price": 1.99,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/05985.png"
+  },
+  {
+    "name": "White Truffle Popcorn",
+    "sku": "068821",
+    "price": 3.29,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/68821.png"
+  },
+  {
+    "name": "World's Puffiest Sour Cream & Onion Corn Puffs",
+    "sku": "098652",
+    "price": 2.69,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/98652.png"
+  },
+  {
+    "name": "World's Puffiest White Cheddar Corn Puffs",
+    "sku": "053371",
+    "price": 2.69,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m21001/53371.png"
+  }
+]

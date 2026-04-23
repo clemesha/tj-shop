@@ -1,0 +1,555 @@
+[
+  {
+    "name": "Baby Corn",
+    "sku": "073111",
+    "price": 2.79,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/73111.png"
+  },
+  {
+    "name": "Baby Shanghai Bok Choy",
+    "sku": "098253",
+    "price": 2.99,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/98253.png"
+  },
+  {
+    "name": "Broccoli & Kale Slaw",
+    "sku": "055386",
+    "price": 3.29,
+    "size": "11 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/55386.png"
+  },
+  {
+    "name": "Brussels Sprouts",
+    "sku": "061860",
+    "price": 4.99,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/61860.png"
+  },
+  {
+    "name": "Campari Tomatoes",
+    "sku": "095554",
+    "price": 3.79,
+    "size": "1 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/95554.png"
+  },
+  {
+    "name": "Corn on the Cob",
+    "sku": "090761",
+    "price": 0.69,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/90761.png"
+  },
+  {
+    "name": "Cruciferous Crunch Collection",
+    "sku": "052105",
+    "price": 2.79,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/52105.png"
+  },
+  {
+    "name": "Cut and Peeled Carrots",
+    "sku": "070588",
+    "price": 1.69,
+    "size": "24 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/70588.png"
+  },
+  {
+    "name": "Cut Butternut Squash",
+    "sku": "091755",
+    "price": 3.99,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/91755.png"
+  },
+  {
+    "name": "Cut Butternut Squash",
+    "sku": "093858",
+    "price": 4.99,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/93858.png"
+  },
+  {
+    "name": "Cut Sweet Potatoes",
+    "sku": "093857",
+    "price": 5.49,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/93857.png"
+  },
+  {
+    "name": "Delicata Squash",
+    "sku": "050661",
+    "price": 1.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/50661.png"
+  },
+  {
+    "name": "Dutch Yellow Baby Potatoes",
+    "sku": "016272",
+    "price": 3.79,
+    "size": "24 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/16272.png"
+  },
+  {
+    "name": "Fall Fantasy Pumpkin",
+    "sku": "050097",
+    "price": 8.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/50097.png"
+  },
+  {
+    "name": "Fresh Fennel",
+    "sku": "095748",
+    "price": 3.49,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/95748.png"
+  },
+  {
+    "name": "Gold Potatoes 5 lb",
+    "sku": "070120",
+    "price": 4.99,
+    "size": "5 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/70120.png"
+  },
+  {
+    "name": "Green Onions",
+    "sku": "044168",
+    "price": 1.29,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/44168.png"
+  },
+  {
+    "name": "Haricots Verts",
+    "sku": "093897",
+    "price": 5.99,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/93897.png"
+  },
+  {
+    "name": "Ice Cube Baby Iceberg Lettuce",
+    "sku": "083758",
+    "price": 2.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/83758.png"
+  },
+  {
+    "name": "Jicama Sticks",
+    "sku": "055482",
+    "price": 3.49,
+    "size": "9.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/55482.png"
+  },
+  {
+    "name": "Jumbo Yellow Onions",
+    "sku": "095520",
+    "price": 0.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/95520.png"
+  },
+  {
+    "name": "Kumato Brown Tomatoes",
+    "sku": "095153",
+    "price": 3.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/95153.png"
+  },
+  {
+    "name": "Leaves of Little Gem Lettuce",
+    "sku": "080012",
+    "price": 2.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/80012.png"
+  },
+  {
+    "name": "Les Petites Carrots of Many Colors",
+    "sku": "057285",
+    "price": 4.29,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/57285.png"
+  },
+  {
+    "name": "Lil' Tiger Stripe Pumpkin",
+    "sku": "095585",
+    "price": 1.49,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/95585.png"
+  },
+  {
+    "name": "Little Gem Lettuce",
+    "sku": "076869",
+    "price": 3.49,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/76869.png"
+  },
+  {
+    "name": "Little Leaf Farms Baby Crispy Green Leaf",
+    "sku": "079710",
+    "price": 0,
+    "size": "4 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/79710.png"
+  },
+  {
+    "name": "Mirepoix",
+    "sku": "090741",
+    "price": 3.49,
+    "size": "14.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/90741.png"
+  },
+  {
+    "name": "Murasaki Sweet Potatoes",
+    "sku": "055283",
+    "price": 4.99,
+    "size": "3 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/55283.png"
+  },
+  {
+    "name": "Orange Pumpkin",
+    "sku": "047002",
+    "price": 4.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/47002.png"
+  },
+  {
+    "name": "Organic Arugula",
+    "sku": "032591",
+    "price": 2.29,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/32591.png"
+  },
+  {
+    "name": "Organic Baby Lettuce Mix",
+    "sku": "032595",
+    "price": 2.49,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/32595.png"
+  },
+  {
+    "name": "Organic Baby Red Butter Lettuce & Baby Arugula",
+    "sku": "080626",
+    "price": 2.49,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/80626.png"
+  },
+  {
+    "name": "Organic Baby Spinach",
+    "sku": "032603",
+    "price": 1.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/32603.png"
+  },
+  {
+    "name": "Organic Beets",
+    "sku": "053681",
+    "price": 1.79,
+    "size": "1 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/53681.png"
+  },
+  {
+    "name": "Organic Brussels Sprouts",
+    "sku": "050810",
+    "price": 3.69,
+    "size": "14 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/50810.png"
+  },
+  {
+    "name": "Organic Carrots of Many Colors",
+    "sku": "051475",
+    "price": 1.99,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/51475.png"
+  },
+  {
+    "name": "Organic Coleslaw Mix",
+    "sku": "055824",
+    "price": 2.49,
+    "size": "9 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/55824.png"
+  },
+  {
+    "name": "Organic Crimini Mushrooms",
+    "sku": "053437",
+    "price": 2.69,
+    "size": "8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/53437.png"
+  },
+  {
+    "name": "Organic English Cucumber",
+    "sku": "094499",
+    "price": 2.49,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/94499.png"
+  },
+  {
+    "name": "Organic Gold Potatoes",
+    "sku": "070128",
+    "price": 3.99,
+    "size": "3 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/70128.png"
+  },
+  {
+    "name": "Organic Herb Salad Mix",
+    "sku": "050066",
+    "price": 2.49,
+    "size": "5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/50066.png"
+  },
+  {
+    "name": "Organic Mini Sweet Peppers",
+    "sku": "057202",
+    "price": 3.99,
+    "size": "1 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/57202.png"
+  },
+  {
+    "name": "Organic Peeled Ginger",
+    "sku": "083154",
+    "price": 3.49,
+    "size": "4 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/83154.png"
+  },
+  {
+    "name": "Organic Persian Cucumbers",
+    "sku": "091838",
+    "price": 2.99,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/91838.png"
+  },
+  {
+    "name": "Organic Petite Potato Medley",
+    "sku": "062883",
+    "price": 3.49,
+    "size": "24 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/62883.png"
+  },
+  {
+    "name": "Organic Red Bell Peppers",
+    "sku": "091328",
+    "price": 3.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/91328.png"
+  },
+  {
+    "name": "Organic Red Butter Lettuce",
+    "sku": "077284",
+    "price": 2.49,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/77284.png"
+  },
+  {
+    "name": "Organic Romaine & Chicory Blend",
+    "sku": "076917",
+    "price": 2.49,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/76917.png"
+  },
+  {
+    "name": "Organic Shredded Kale",
+    "sku": "065311",
+    "price": 3.99,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/65311.png"
+  },
+  {
+    "name": "Organic Sweet Potatoes",
+    "sku": "033372",
+    "price": 4.99,
+    "size": "3 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/33372.png"
+  },
+  {
+    "name": "Organic Sweet Potatoes",
+    "sku": "055866",
+    "price": 6.49,
+    "size": "5 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/55866.png"
+  },
+  {
+    "name": "Organic Tri-Color Bell Peppers",
+    "sku": "095882",
+    "price": 4.99,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/95882.png"
+  },
+  {
+    "name": "Organic Tuscan Kale",
+    "sku": "098082",
+    "price": 2.79,
+    "size": "10 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/98082.png"
+  },
+  {
+    "name": "Persian Cucumbers",
+    "sku": "070625",
+    "price": 2.49,
+    "size": "1 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/70625.png"
+  },
+  {
+    "name": "Portabella Mushrooms",
+    "sku": "012659",
+    "price": 3.49,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/12659.png"
+  },
+  {
+    "name": "Ready Veggies",
+    "sku": "073199",
+    "price": 2.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/73199.png"
+  },
+  {
+    "name": "Romaine Hearts",
+    "sku": "037786",
+    "price": 2.99,
+    "size": "18 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/37786.png"
+  },
+  {
+    "name": "Russet Potatoes",
+    "sku": "099095",
+    "price": 0.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/99095.png"
+  },
+  {
+    "name": "Shelled Edamame with Sea Salt",
+    "sku": "068709",
+    "price": 3.99,
+    "size": "9 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/68709.png"
+  },
+  {
+    "name": "Shiitake Mushrooms",
+    "sku": "028950",
+    "price": 3.49,
+    "size": "3.5 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/28950.png"
+  },
+  {
+    "name": "Shiitake Mushrooms",
+    "sku": "015688",
+    "price": 2.99,
+    "size": "4 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/15688.png"
+  },
+  {
+    "name": "Shishito Peppers",
+    "sku": "080336",
+    "price": 2.99,
+    "size": "8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/80336.png"
+  },
+  {
+    "name": "Shishito Peppers",
+    "sku": "054163",
+    "price": 2.29,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/54163.png"
+  },
+  {
+    "name": "Spaghetti Squash",
+    "sku": "091769",
+    "price": 2.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/91769.png"
+  },
+  {
+    "name": "Steamed & Peeled Baby Beets",
+    "sku": "072774",
+    "price": 2.29,
+    "size": "8 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/72774.png"
+  },
+  {
+    "name": "Steamed Lentils",
+    "sku": "090240",
+    "price": 3.29,
+    "size": "17.63 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/90240.png"
+  },
+  {
+    "name": "Stir Fry Veggie Blend",
+    "sku": "077922",
+    "price": 3.49,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/77922.png"
+  },
+  {
+    "name": "Sugar Snap Peas",
+    "sku": "030312",
+    "price": 2.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/30312.png"
+  },
+  {
+    "name": "Super Sweet Fresh Corn",
+    "sku": "009286",
+    "price": 4.49,
+    "size": "20 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/09286.png"
+  },
+  {
+    "name": "Sweet Mini Peppers",
+    "sku": "065977",
+    "price": 3.49,
+    "size": "1 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/65977.png"
+  },
+  {
+    "name": "Sweet Potato",
+    "sku": "097997",
+    "price": 0.99,
+    "size": "1 Each",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/97997.png"
+  },
+  {
+    "name": "Teeny Tiny Tomatoes",
+    "sku": "067942",
+    "price": 1.99,
+    "size": "3.53 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/67942.png"
+  },
+  {
+    "name": "Trimmed Leeks",
+    "sku": "091030",
+    "price": 2.99,
+    "size": "6 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/91030.png"
+  },
+  {
+    "name": "Vegetable Tray",
+    "sku": "077630",
+    "price": 4.99,
+    "size": "18 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/77630.png"
+  },
+  {
+    "name": "Veggie Kabobs",
+    "sku": "058092",
+    "price": 5.99,
+    "size": "12 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/58092.png"
+  },
+  {
+    "name": "Vidalia Onions",
+    "sku": "058006",
+    "price": 2.99,
+    "size": "2 Lb",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/58006.png"
+  },
+  {
+    "name": "Wild Arugula",
+    "sku": "092686",
+    "price": 2.29,
+    "size": "7 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/92686.png"
+  },
+  {
+    "name": "Yellow Squash",
+    "sku": "032039",
+    "price": 2.49,
+    "size": "16 Oz",
+    "image": "https://www.traderjoes.com/content/dam/trjo/products/m20702/32039.png"
+  }
+]

@@ -165,6 +165,45 @@
       font-weight: 400;
       opacity: 0.85;
     }
+    /* Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 340px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 24px;
+      color: #999;
+      cursor: pointer;
+      border: none;
+      background: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .modal img {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      margin: 8px auto 16px;
+      display: block;
+    }
+    .modal-name { font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+    .modal-detail { font-size: 14px; color: #888; }
     /* Shop View */
     .shop-item {
       display: flex;
@@ -235,7 +274,7 @@
 </head>
 <body>
   <div id="shop-view" style="display:none">
-    <h1>Trader Joe's - Shopping List</h1>
+    <h1 style="font-size:20px;margin-bottom:8px">Trader Joe's - Shopping List</h1>
     <div id="shop-meta" style="max-width:500px;margin:0 auto 16px;display:flex;justify-content:space-between;align-items:center">
       <div id="shop-label" style="font-size:16px;color:#666"></div>
     </div>
@@ -246,6 +285,15 @@
         <div class="total-details"><span id="shop-progress-bottom">0 of 0</span> checked</div>
       </div>
       <span id="shop-total">$0.00</span>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <img id="modal-img" src="" alt="">
+      <div class="modal-name" id="modal-name"></div>
+      <div class="modal-detail" id="modal-detail"></div>
     </div>
   </div>
 
@@ -40867,10 +40915,10 @@ ICE CREAM</div>
         const p = products[item.sku];
         if (!p) return;
         const checked = item.checked === true || item.checked === 'TRUE';
-        html += '<div class="shop-item' + (checked ? ' checked' : '') + '" data-sku="' + item.sku + '" data-price="' + p.price + '" data-qty="' + item.quantity + '" onclick="toggleCheck(this)">' +
-          '<div class="shop-check">' + (checked ? '&#10003;' : '') + '</div>' +
-          '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy">' +
-          '<div class="shop-info"><div class="shop-name">' + p.name + '</div></div>' +
+        html += '<div class="shop-item' + (checked ? ' checked' : '') + '" data-sku="' + item.sku + '" data-price="' + p.price + '" data-qty="' + item.quantity + '">' +
+          '<div class="shop-check" onclick="toggleCheck(this.parentElement)">' + (checked ? '&#10003;' : '') + '</div>' +
+          '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy" onclick="showModal(\'' + p.image + '\',\'' + p.name.replace(/'/g, "\\'") + '\',\'' + p.size + '\',\'' + p.price.toFixed(2) + '\')">' +
+          '<div class="shop-info" onclick="showModal(\'' + p.image + '\',\'' + p.name.replace(/'/g, "\\'") + '\',\'' + p.size + '\',\'' + p.price.toFixed(2) + '\')"><div class="shop-name">' + p.name + '</div></div>' +
           '<div class="shop-qty">' + item.quantity + '</div>' +
           '</div>';
       });
@@ -40889,6 +40937,16 @@ ICE CREAM</div>
       const lists = await apiGet('getLists');
       const list = lists.find(l => l.label === listId);
       if (list) apiPost({ action: 'toggleChecked', listId: list.list_id, sku });
+    }
+
+    function showModal(image, name, size, price) {
+      document.getElementById('modal-img').src = image;
+      document.getElementById('modal-name').textContent = name;
+      document.getElementById('modal-detail').textContent = size;
+      document.getElementById('modal').classList.add('open');
+    }
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
     }
 
     function updateShopTotals() {

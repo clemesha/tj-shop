@@ -28,7 +28,8 @@ gh auth switch --user clemesha
 
 ## Apps Script API
 
-- Web app URL: `https://script.google.com/macros/s/AKfycbwWG2AKM60HN90055DQ5EJ1J1VV7pEZY6mzeF_g0P8dyvzgcnE1O5A7Mz_R0awvPogr5w/exec`
+- Web app URL: `https://script.google.com/macros/s/AKfycbzkQrkvU16jQF5SLKw2ZYWRrx2JxzSZroWOpB7t9nE_ByN1ItFLz0k0JKARjEsOebC21w/exec`
+- IMPORTANT: Never use `clasp deploy -i` on the web app deployment — it resets the type to Library. Only push code with `clasp push --force`, then update the version manually in the Apps Script UI (Deploy → Manage deployments → edit → pick latest version).
 - Google Sheet ID: `1V0d4ejGLPfGwOvKJzhjHxvC446m31R0YCeVnZQ9WNlk`
 - GET endpoints (public): `getLists`, `getList`, `getCustomProducts`
 - POST endpoints (token required): `saveListItems`, `toggleChecked`, `addCustomProduct`, `editCustomProduct`, `deleteCustomProduct`, `createList`

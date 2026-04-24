@@ -37,8 +37,8 @@ function doGet(e) {
       if (active.length === 0) return jsonResponse({ error: 'No active list' });
       targetId = active[active.length - 1].list_id;
     }
-    const items = sheetToJson(getSheet('list_items')).filter(i => i.list_id === targetId);
-    const list = lists.find(l => l.list_id === targetId);
+    const items = sheetToJson(getSheet('list_items')).filter(i => String(i.list_id) === String(targetId));
+    const list = lists.find(l => String(l.list_id) === String(targetId));
     return jsonResponse({ list, items });
   }
 
@@ -67,10 +67,13 @@ function doPost(e) {
       if (data[i][0] === listId) sheet.deleteRow(i + 1);
     }
 
-    // Add new items
-    items.forEach(item => {
-      sheet.appendRow([listId, item.sku, item.quantity, false]);
-    });
+    // Add new items as plain text to prevent auto-formatting
+    if (items.length > 0) {
+      const lastRow = sheet.getLastRow();
+      const range = sheet.getRange(lastRow + 1, 1, items.length, 4);
+      range.setNumberFormat('@');
+      range.setValues(items.map(item => [listId, String(item.sku), String(item.quantity), 'FALSE']));
+    }
 
     return jsonResponse({ ok: true });
   }

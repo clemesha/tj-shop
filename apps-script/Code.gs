@@ -64,7 +64,7 @@ function doPost(e) {
     // Remove existing items for this list
     const data = sheet.getDataRange().getValues();
     for (let i = data.length - 1; i >= 1; i--) {
-      if (data[i][0] === listId) sheet.deleteRow(i + 1);
+      if (String(data[i][0]) === String(listId)) sheet.deleteRow(i + 1);
     }
 
     // Add new items as plain text to prevent auto-formatting

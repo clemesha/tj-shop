@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trader Joe's Shopping List</title>
   <style>
+    html { scroll-behavior: smooth; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -38,20 +39,31 @@
       max-width: 500px;
       margin: 0 auto 20px;
     }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
     .nav-group-label {
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: #aaa;
-      margin: 12px 0 6px;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      margin: 4px 2px;
     }
-    .nav-group-label:first-child { margin-top: 0; }
+    .nav-group-chevron { font-size: 10px; margin-left: 2px; }
     .nav-pills {
-      display: flex;
+      display: none;
       gap: 6px;
       flex-wrap: wrap;
+      align-items: center;
     }
+    .nav-pills.open { display: flex; width: 100%; }
     .nav-item {
       padding: 6px 12px;
       background: #fff;
@@ -64,6 +76,16 @@
       white-space: nowrap;
     }
     .nav-item:active { background: #c81e1e; color: #fff; }
+    .section-items {
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.25s ease;
+      max-height: 0;
+      opacity: 0;
+    }
+    .section-items.open {
+      max-height: 100000px;
+      opacity: 1;
+    }
     .section { max-width: 500px; margin: 0 auto 4px; }
     .section-header {
       display: flex;
@@ -77,6 +99,20 @@
       -webkit-tap-highlight-color: transparent;
     }
     .section-count { font-size: 13px; font-weight: 400; color: #aaa; }
+    .section-add {
+      width: 20px; height: 20px;
+      border: none; background: #c81e1e;
+      color: #fff; border-radius: 5px;
+      font-size: 14px; font-weight: 700; line-height: 1;
+      cursor: pointer;
+      display: none;
+      align-items: center; justify-content: center;
+      -webkit-tap-highlight-color: transparent;
+      margin-left: 6px;
+      vertical-align: middle;
+      display: none;
+    }
+    .section-header.open .section-add { display: inline-flex; }
     .chevron { font-size: 12px; color: #aaa; }
     .item {
       display: flex;
@@ -204,6 +240,43 @@
     }
     .modal-name { font-weight: 700; font-size: 18px; margin-bottom: 4px; }
     .modal-detail { font-size: 14px; color: #888; }
+    /* Custom product form */
+    .form-modal .modal { max-width: 380px; text-align: left; padding: 20px; }
+    .form-modal h3 { margin-bottom: 16px; font-size: 18px; }
+    .form-field { margin-bottom: 12px; }
+    .form-field label { display: block; font-size: 13px; font-weight: 600; color: #666; margin-bottom: 4px; }
+    .form-field input, .form-field select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .form-field input:focus, .form-field select:focus { border-color: #c81e1e; }
+    .form-actions { display: flex; gap: 8px; margin-top: 16px; }
+    .form-actions button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-save { background: #c81e1e; color: #fff; }
+    .btn-cancel { background: #f0f0f0; color: #666; }
+    .btn-delete { background: none; color: #c81e1e; border: 2px solid #c81e1e !important; font-size: 13px; padding: 8px; margin-top: 8px; width: 100%; border-radius: 8px; cursor: pointer; }
+    /* Custom item marker */
+    .item.custom { border-left: 3px solid #c81e1e; }
+    .item.custom .edit-btn {
+      width: 28px; height: 28px;
+      border: none; background: none;
+      font-size: 16px; color: #aaa;
+      cursor: pointer; flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
     /* Shop View */
     .shop-item {
       display: flex;
@@ -276,7 +349,7 @@
   <div id="shop-view" style="display:none">
     <h1 style="font-size:20px;margin-bottom:8px">Trader Joe's - Shopping List</h1>
     <div id="shop-meta" style="max-width:500px;margin:0 auto 16px;display:flex;justify-content:space-between;align-items:center">
-      <div id="shop-label" style="font-size:16px;color:#666"></div>
+      <div id="shop-label" style="font-size:16px;color:#666;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent"></div>
     </div>
     <div id="shop-items" class="list"></div>
     <div class="total">
@@ -297,6 +370,39 @@
     </div>
   </div>
 
+  <div class="modal-overlay form-modal" id="custom-form" onclick="if(event.target===this)closeCustomForm()">
+    <div class="modal">
+      <button class="modal-close" onclick="closeCustomForm()">&times;</button>
+      <h3 id="custom-form-title">Add Custom Item</h3>
+      <input type="hidden" id="cf-sku" value="">
+      <div class="form-field">
+        <label>Name *</label>
+        <input type="text" id="cf-name" placeholder="Name at Trader Joe's">
+      </div>
+      <div class="form-field">
+        <label>Price</label>
+        <input type="number" id="cf-price" step="0.01" placeholder="e.g. 7.49">
+      </div>
+      <div class="form-field">
+        <label>Size</label>
+        <input type="text" id="cf-size" placeholder="e.g. 12 Fl Oz">
+      </div>
+      <div class="form-field">
+        <label>Category</label>
+        <select id="cf-category"></select>
+      </div>
+      <div class="form-field">
+        <label>Image URL <a href="#" id="cf-image-search" target="_blank" style="font-weight:400;font-size:12px;color:#c81e1e;text-decoration:none;margin-left:4px" onclick="event.stopPropagation();var n=document.getElementById('cf-name').value||'product';this.href='https://www.google.com/search?tbm=isch&q=Trader+Joe%27s+'+encodeURIComponent(n)">find image</a></label>
+        <input type="url" id="cf-image" placeholder="optional">
+      </div>
+      <div class="form-actions">
+        <button class="btn-cancel" onclick="closeCustomForm()">Cancel</button>
+        <button class="btn-save" onclick="saveCustomProduct()">Save</button>
+      </div>
+      <button class="btn-delete" id="cf-delete" style="display:none" onclick="deleteCustomProduct()">Delete this item</button>
+    </div>
+  </div>
+
   <div id="store-view" style="display:none">
   <h1>Trader Joe's Store</h1>
   <div style="max-width:500px;margin:0 auto 12px;display:flex;gap:8px">
@@ -307,97 +413,97 @@
     <input type="text" placeholder="Search 2,659 products..." oninput="search(this.value)">
   </div>
   <nav class="nav">
-    <div class="nav-group-label">Fresh</div>
+    <div class="nav-group-label" onclick="toggleNav(this)">Fresh <span class="nav-group-chevron">▼</span></div>
     <div class="nav-pills">
       <a class="nav-item" href="#fruits">Fruits</a>
       <a class="nav-item" href="#veggies">Veggies</a>
-      <a class="nav-item" href="#beef--pork---lamb">Beef, Pork & Lamb</a>
-      <a class="nav-item" href="#chicken---turkey">Chicken & Turkey</a>
-      <a class="nav-item" href="#fish---seafood">Fish & Seafood</a>
+      <a class="nav-item" href="#beef-pork-lamb">Beef, Pork & Lamb</a>
+      <a class="nav-item" href="#chicken-turkey">Chicken & Turkey</a>
+      <a class="nav-item" href="#fish-seafood">Fish & Seafood</a>
       <a class="nav-item" href="#plant-based-protein">Plant-based</a>
     </div>
-    <div class="nav-group-label">Prepared</div>
+    <div class="nav-group-label" onclick="toggleNav(this)">Prepared <span class="nav-group-chevron">▼</span></div>
     <div class="nav-pills">
-      <a class="nav-item" href="#salads--soups---sides">Salads & Soups</a>
-      <a class="nav-item" href="#wraps---sandwiches">Wraps</a>
+      <a class="nav-item" href="#salads-soups-sides">Salads & Soups</a>
+      <a class="nav-item" href="#wraps-sandwiches">Wraps</a>
       <a class="nav-item" href="#entrees">Entrees</a>
       <a class="nav-item" href="#prepared-desserts">Desserts</a>
     </div>
-    <div class="nav-group-label">Dairy & Cheese</div>
+    <div class="nav-group-label" onclick="toggleNav(this)">Dairy & Cheese <span class="nav-group-chevron">▼</span></div>
     <div class="nav-pills">
-      <a class="nav-item" href="#milk---cream">Milk</a>
+      <a class="nav-item" href="#milk-cream">Milk</a>
       <a class="nav-item" href="#butter">Butter</a>
       <a class="nav-item" href="#yogurt">Yogurt</a>
       <a class="nav-item" href="#eggs">Eggs</a>
-      <a class="nav-item" href="#slices--shreds---crumbles">Sliced Cheese</a>
+      <a class="nav-item" href="#slices-shreds-crumbles">Sliced Cheese</a>
       <a class="nav-item" href="#cheese-for-snacking">Snack Cheese</a>
-      <a class="nav-item" href="#wedges--wheels---logs">Wedges & Wheels</a>
-      <a class="nav-item" href="#cream---creamy-cheeses">Cream Cheese</a>
+      <a class="nav-item" href="#wedges-wheels-logs">Wedges & Wheels</a>
+      <a class="nav-item" href="#cream-creamy-cheeses">Cream Cheese</a>
     </div>
-    <div class="nav-group-label">Bakery</div>
+    <div class="nav-group-label" onclick="toggleNav(this)">Bakery <span class="nav-group-chevron">▼</span></div>
     <div class="nav-pills">
       <a class="nav-item" href="#sliced-bread">Bread</a>
-      <a class="nav-item" href="#loaves--rolls---buns">Rolls & Buns</a>
+      <a class="nav-item" href="#loaves-rolls-buns">Rolls & Buns</a>
       <a class="nav-item" href="#bagels">Bagels</a>
-      <a class="nav-item" href="#tortillas---flatbreads">Tortillas</a>
+      <a class="nav-item" href="#tortillas-flatbreads">Tortillas</a>
       <a class="nav-item" href="#sweet-baked-goods">Sweet Baked</a>
     </div>
-    <div class="nav-group-label">Sauces & Dips</div>
+    <div class="nav-group-label" onclick="toggleNav(this)">Sauces & Dips <span class="nav-group-chevron">▼</span></div>
     <div class="nav-pills">
       <a class="nav-item" href="#condiments">Condiments</a>
-      <a class="nav-item" href="#bbq--pasta---simmer-sauces">Sauces</a>
-      <a class="nav-item" href="#salsa---hot-sauce">Salsa & Hot Sauce</a>
-      <a class="nav-item" href="#dips---spreads">Dips</a>
-      <a class="nav-item" href="#dressings---seasonings">Dressings</a>
+      <a class="nav-item" href="#bbq-pasta-simmer-sauces">Sauces</a>
+      <a class="nav-item" href="#salsa-hot-sauce">Salsa & Hot Sauce</a>
+      <a class="nav-item" href="#dips-spreads">Dips</a>
+      <a class="nav-item" href="#dressings-seasonings">Dressings</a>
     </div>
-    <div class="nav-group-label">Pantry</div>
+    <div class="nav-group-label" onclick="toggleNav(this)">Pantry <span class="nav-group-chevron">▼</span></div>
     <div class="nav-pills">
-      <a class="nav-item" href="#pastas---grains">Pasta & Grains</a>
-      <a class="nav-item" href="#packaged-fish--meat--fruit---veg">Packaged</a>
-      <a class="nav-item" href="#nut-butters---fruit-spreads">Nut Butters</a>
-      <a class="nav-item" href="#oils---vinegars">Oils & Vinegars</a>
-      <a class="nav-item" href="#baking---cooking">Baking</a>
+      <a class="nav-item" href="#pastas-grains">Pasta & Grains</a>
+      <a class="nav-item" href="#packaged-fish-meat-fruit-veg">Packaged</a>
+      <a class="nav-item" href="#nut-butters-fruit-spreads">Nut Butters</a>
+      <a class="nav-item" href="#oils-vinegars">Oils & Vinegars</a>
+      <a class="nav-item" href="#baking-cooking">Baking</a>
       <a class="nav-item" href="#spices">Spices</a>
       <a class="nav-item" href="#cereals">Cereals</a>
-      <a class="nav-item" href="#soup--chili---meals">Soup & Chili</a>
-      <a class="nav-item" href="#honeys--syrups---nectars">Honeys & Syrups</a>
+      <a class="nav-item" href="#soup-chili-meals">Soup & Chili</a>
+      <a class="nav-item" href="#honeys-syrups-nectars">Honeys & Syrups</a>
     </div>
-    <div class="nav-group-label">Snacks</div>
+    <div class="nav-group-label" onclick="toggleNav(this)">Snacks <span class="nav-group-chevron">▼</span></div>
     <div class="nav-pills">
-      <a class="nav-item" href="#chips--crackers---crunchy-bites">Chips & Crackers</a>
-      <a class="nav-item" href="#candies---cookies">Candies & Cookies</a>
-      <a class="nav-item" href="#nuts--dried-fruits---seeds">Nuts & Seeds</a>
-      <a class="nav-item" href="#bars---jerky">Bars & Jerky</a>
+      <a class="nav-item" href="#chips-crackers-crunchy-bites">Chips & Crackers</a>
+      <a class="nav-item" href="#candies-cookies">Candies & Cookies</a>
+      <a class="nav-item" href="#nuts-dried-fruits-seeds">Nuts & Seeds</a>
+      <a class="nav-item" href="#bars-jerky">Bars & Jerky</a>
     </div>
-    <div class="nav-group-label">Frozen</div>
+    <div class="nav-group-label" onclick="toggleNav(this)">Frozen <span class="nav-group-chevron">▼</span></div>
     <div class="nav-pills">
       <a class="nav-item" href="#frozen-appetizers">Appetizers</a>
-      <a class="nav-item" href="#frozen-entrees---sides">Entrees & Sides</a>
-      <a class="nav-item" href="#frozen-fruit---vegetables">Fruit & Veg</a>
+      <a class="nav-item" href="#frozen-entrees-sides">Entrees & Sides</a>
+      <a class="nav-item" href="#frozen-fruit-vegetables">Fruit & Veg</a>
       <a class="nav-item" href="#frozen-desserts">Desserts</a>
     </div>
-    <div class="nav-group-label">Beverages</div>
+    <div class="nav-group-label" onclick="toggleNav(this)">Beverages <span class="nav-group-chevron">▼</span></div>
     <div class="nav-pills">
-      <a class="nav-item" href="#juices---more">Juices</a>
+      <a class="nav-item" href="#juices-more">Juices</a>
       <a class="nav-item" href="#water">Water</a>
       <a class="nav-item" href="#non-dairy-beverages">Non-Dairy</a>
-      <a class="nav-item" href="#coffee---tea">Coffee & Tea</a>
-      <a class="nav-item" href="#sodas---mixers">Sodas & Mixers</a>
-      <a class="nav-item" href="#wine--beer---liquor">Wine & Beer</a>
+      <a class="nav-item" href="#coffee-tea">Coffee & Tea</a>
+      <a class="nav-item" href="#sodas-mixers">Sodas & Mixers</a>
+      <a class="nav-item" href="#wine-beer-liquor">Wine & Beer</a>
     </div>
-    <div class="nav-group-label">Home & Body</div>
+    <div class="nav-group-label" onclick="toggleNav(this)">Home & Body <span class="nav-group-chevron">▼</span></div>
     <div class="nav-pills">
       <a class="nav-item" href="#household-essentials">Household</a>
-      <a class="nav-item" href="#face---body">Face & Body</a>
+      <a class="nav-item" href="#face-body">Face & Body</a>
       <a class="nav-item" href="#pet-stuff">Pet</a>
       <a class="nav-item" href="#nutritional-supplements">Supplements</a>
     </div>
   </nav>
 
   <div class="section" id="fruits">
-    <h2 class="section-header open" onclick="toggle(this)">
+    <h2 data-category="Fruits" class="section-header" onclick="toggle(this)">
       <span>Fruits <span class="section-count">(52)</span></span>
-      <span class="chevron">&#9650;</span>
+      <span class="chevron">&#9660;</span>
     </h2>
     <div class="section-items">
       <div class="item zero" data-price="1.19" data-sku="052688">
@@ -1184,11 +1290,11 @@
   </div>
 
   <div class="section" id="veggies">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Veggies" class="section-header" onclick="toggle(this)">
       <span>Veggies <span class="section-count">(79)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="2.79" data-sku="073111">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20702/73111.png" alt="Baby Corn" loading="lazy">
         <div class="item-info">
@@ -2378,11 +2484,11 @@
   </div>
 
   <div class="section" id="salads-soups-sides">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Salads, Soups &amp; Sides" class="section-header" onclick="toggle(this)">
       <span>Salads, Soups &amp; Sides <span class="section-count">(76)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.99" data-sku="070309">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20501/70309.png" alt="A Za&#39;atar Tango Salad Kit" loading="lazy">
         <div class="item-info">
@@ -3527,11 +3633,11 @@
   </div>
 
   <div class="section" id="wraps-sandwiches">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Wraps &amp; Sandwiches" class="section-header" onclick="toggle(this)">
       <span>Wraps &amp; Sandwiches <span class="section-count">(7)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="4.49" data-sku="073034">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20502/73034.png" alt="Cheeseburger Burrito" loading="lazy">
         <div class="item-info">
@@ -3641,11 +3747,11 @@
   </div>
 
   <div class="section" id="entrees">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Entrees" class="section-header" onclick="toggle(this)">
       <span>Entrees <span class="section-count">(55)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.29" data-sku="074256">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20503/74256.png" alt="4 Cheese Ravioli" loading="lazy">
         <div class="item-info">
@@ -4479,11 +4585,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="prepared-desserts">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Prepared Desserts" class="section-header" onclick="toggle(this)">
       <span>Prepared Desserts <span class="section-count">(9)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.49" data-sku="081846">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20504/81846.png" alt="Caramel Flan" loading="lazy">
         <div class="item-info">
@@ -4623,11 +4729,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="beef-pork-lamb">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Beef, Pork &amp; Lamb" class="section-header" onclick="toggle(this)">
       <span>Beef, Pork &amp; Lamb <span class="section-count">(70)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="10.99" data-sku="057721">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20801/57721.png" alt="All Natural Shaved Beef Steak" loading="lazy">
         <div class="item-info">
@@ -5682,11 +5788,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="chicken-turkey">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Chicken &amp; Turkey" class="section-header" onclick="toggle(this)">
       <span>Chicken &amp; Turkey <span class="section-count">(43)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="1.99" data-sku="061046">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20802/61046.png" alt="All Natural Bone-In Skin-On Chicken Thighs" loading="lazy">
         <div class="item-info">
@@ -6336,11 +6442,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="fish-seafood">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Fish &amp; Seafood" class="section-header" onclick="toggle(this)">
       <span>Fish &amp; Seafood <span class="section-count">(21)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="8.99" data-sku="070359">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20803/70359.png" alt="Argentinian Red Shrimp with Ginger Garlic Butter" loading="lazy">
         <div class="item-info">
@@ -6660,11 +6766,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="plant-based-protein">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Plant-based Protein" class="section-header" onclick="toggle(this)">
       <span>Plant-based Protein <span class="section-count">(9)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="2.99" data-sku="083089">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20804/83089.png" alt="High Protein Organic Tofu" loading="lazy">
         <div class="item-info">
@@ -6804,11 +6910,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="milk-cream">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Milk &amp; Cream" class="section-header" onclick="toggle(this)">
       <span>Milk &amp; Cream <span class="section-count">(14)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="4.49" data-sku="061673">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20301/61673.png" alt="Chocolate Milk made with Fair Trade Cocoa" loading="lazy">
         <div class="item-info">
@@ -7023,11 +7129,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="butter">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Butter" class="section-header" onclick="toggle(this)">
       <span>Butter <span class="section-count">(7)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="2.99" data-sku="006252">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20302/06252.png" alt="Butter Quarters, Salted" loading="lazy">
         <div class="item-info">
@@ -7137,11 +7243,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="yogurt">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Yogurt" class="section-header" onclick="toggle(this)">
       <span>Yogurt <span class="section-count">(36)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="0.99" data-sku="077291">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20303/77291.png" alt="Apricot Mango Greek Whole Milk Yogurt" loading="lazy">
         <div class="item-info">
@@ -7686,11 +7792,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="eggs">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Eggs" class="section-header" onclick="toggle(this)">
       <span>Eggs <span class="section-count">(4)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.49" data-sku="081451">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20304/81451.png" alt="Kramer Farms Cage Free Hard-Boiled Eggs" loading="lazy">
         <div class="item-info">
@@ -7755,11 +7861,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="slices-shreds-crumbles">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Slices, Shreds &amp; Crumbles" class="section-header" onclick="toggle(this)">
       <span>Slices, Shreds &amp; Crumbles <span class="section-count">(34)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.29" data-sku="025966">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20201/25966.png" alt="Crumbled Feta" loading="lazy">
         <div class="item-info">
@@ -8274,11 +8380,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="cheese-for-snacking">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Cheese for Snacking" class="section-header" onclick="toggle(this)">
       <span>Cheese for Snacking <span class="section-count">(4)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="5.99" data-sku="075219">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20202/75219.png" alt="Cheese Party Tray" loading="lazy">
         <div class="item-info">
@@ -8343,11 +8449,11 @@ Pizza Dough</div>
   </div>
 
   <div class="section" id="wedges-wheels-logs">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Wedges, Wheels &amp; Logs" class="section-header" onclick="toggle(this)">
       <span>Wedges, Wheels &amp; Logs <span class="section-count">(100)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="12.99" data-sku="097274">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20203/97274.png" alt="1000 Day Gouda Cheese" loading="lazy">
         <div class="item-info">
@@ -9854,11 +9960,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="cream-creamy-cheeses">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Cream &amp; Creamy Cheeses" class="section-header" onclick="toggle(this)">
       <span>Cream &amp; Creamy Cheeses <span class="section-count">(33)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="2.79" data-sku="078086">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20204/78086.png" alt="Black Garlic Cream Cheese Spread" loading="lazy">
         <div class="item-info">
@@ -10358,11 +10464,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="sliced-bread">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Sliced Bread" class="section-header" onclick="toggle(this)">
       <span>Sliced Bread <span class="section-count">(17)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="4.99" data-sku="080939">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20101/80939.png" alt="Cinnamon Swirl Bread Sliced" loading="lazy">
         <div class="item-info">
@@ -10622,11 +10728,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="loaves-rolls-buns">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Loaves, Rolls &amp; Buns" class="section-header" onclick="toggle(this)">
       <span>Loaves, Rolls &amp; Buns <span class="section-count">(32)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="4.49" data-sku="061752">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20102/61752.png" alt="Brioche Buns" loading="lazy">
         <div class="item-info">
@@ -11111,11 +11217,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="bagels">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Bagels" class="section-header" onclick="toggle(this)">
       <span>Bagels <span class="section-count">(11)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="2.69" data-sku="060689">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20103/60689.png" alt="Almost Everything Bagels" loading="lazy">
         <div class="item-info">
@@ -11285,11 +11391,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="tortillas-flatbreads">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Tortillas &amp; Flatbreads" class="section-header" onclick="toggle(this)">
       <span>Tortillas &amp; Flatbreads <span class="section-count">(11)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.49" data-sku="068885">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20104/68885.png" alt="Carb Savvy Tortillas made with Whole Wheat" loading="lazy">
         <div class="item-info">
@@ -11459,11 +11565,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="sweet-baked-goods">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Sweet Baked Goods" class="section-header" onclick="toggle(this)">
       <span>Sweet Baked Goods <span class="section-count">(77)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="4.99" data-sku="064320">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20105/64320.png" alt="Apple Cider Donuts" loading="lazy">
         <div class="item-info">
@@ -12623,11 +12729,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="condiments">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Condiments" class="section-header" onclick="toggle(this)">
       <span>Condiments <span class="section-count">(19)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.29" data-sku="095101">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20401/95101.png" alt="Cranberry Sauce" loading="lazy">
         <div class="item-info">
@@ -12917,11 +13023,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="bbq-pasta-simmer-sauces">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="BBQ, Pasta &amp; Simmer Sauces" class="section-header" onclick="toggle(this)">
       <span>BBQ, Pasta &amp; Simmer Sauces <span class="section-count">(32)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.49" data-sku="088617">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20402/88617.png" alt="Alfredo Pasta Sauce" loading="lazy">
         <div class="item-info">
@@ -13406,11 +13512,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="salsa-hot-sauce">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Salsa &amp; Hot Sauce" class="section-header" onclick="toggle(this)">
       <span>Salsa &amp; Hot Sauce <span class="section-count">(24)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="2.99" data-sku="075660">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20403/75660.png" alt="Bird&#39;s Eye Chile Hot Sauce" loading="lazy">
         <div class="item-info">
@@ -13775,11 +13881,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="dips-spreads">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Dips &amp; Spreads" class="section-header" onclick="toggle(this)">
       <span>Dips &amp; Spreads <span class="section-count">(38)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.49" data-sku="073711">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20404/73711.png" alt="Almond Chipotle Dip" loading="lazy">
         <div class="item-info">
@@ -14354,11 +14460,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="dressings-seasonings">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Dressings &amp; Seasonings" class="section-header" onclick="toggle(this)">
       <span>Dressings &amp; Seasonings <span class="section-count">(40)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="2.79" data-sku="027677">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20405/27677.png" alt="Aioli Garlic Mustard Sauce" loading="lazy">
         <div class="item-info">
@@ -14963,11 +15069,11 @@ Mozzarella Cheese</div>
   </div>
 
   <div class="section" id="pastas-grains">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Pastas &amp; Grains" class="section-header" onclick="toggle(this)">
       <span>Pastas &amp; Grains <span class="section-count">(44)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="2.19" data-sku="094506">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20901/94506.png" alt="10 Minute Farro" loading="lazy">
         <div class="item-info">
@@ -15636,11 +15742,11 @@ Penne Rigate</div>
   </div>
 
   <div class="section" id="packaged-fish-meat-fruit-veg">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Packaged Fish, Meat, Fruit &amp; Veg" class="section-header" onclick="toggle(this)">
       <span>Packaged Fish, Meat, Fruit &amp; Veg <span class="section-count">(54)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="0.99" data-sku="009636">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20902/09636.png" alt="Black Beans" loading="lazy">
         <div class="item-info">
@@ -16455,11 +16561,11 @@ Penne Rigate</div>
   </div>
 
   <div class="section" id="nut-butters-fruit-spreads">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Nut Butters &amp; Fruit Spreads" class="section-header" onclick="toggle(this)">
       <span>Nut Butters &amp; Fruit Spreads <span class="section-count">(34)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="8.99" data-sku="081777">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20903/81777.png" alt="3 Spreads for Cheeses &amp; Toast" loading="lazy">
         <div class="item-info">
@@ -16974,11 +17080,11 @@ Penne Rigate</div>
   </div>
 
   <div class="section" id="oils-vinegars">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Oils &amp; Vinegars" class="section-header" onclick="toggle(this)">
       <span>Oils &amp; Vinegars <span class="section-count">(24)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="5.99" data-sku="073652">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20904/73652.png" alt="Agrodolce White Wine Vinegar" loading="lazy">
         <div class="item-info">
@@ -17343,11 +17449,11 @@ Penne Rigate</div>
   </div>
 
   <div class="section" id="baking-cooking">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Baking &amp; Cooking" class="section-header" onclick="toggle(this)">
       <span>Baking &amp; Cooking <span class="section-count">(51)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.99" data-sku="079166">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20905/79166.png" alt="Almond Paste" loading="lazy">
         <div class="item-info">
@@ -18117,11 +18223,11 @@ Penne Rigate</div>
   </div>
 
   <div class="section" id="spices">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Spices" class="section-header" onclick="toggle(this)">
       <span>Spices <span class="section-count">(33)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="2.49" data-sku="077636">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20906/77636.png" alt="Aglio Olio Seasoning Blend" loading="lazy">
         <div class="item-info">
@@ -18623,11 +18729,11 @@ Seasoning Blend</div>
   </div>
 
   <div class="section" id="cereals">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Cereals" class="section-header" onclick="toggle(this)">
       <span>Cereals <span class="section-count">(38)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.99" data-sku="082780">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20907/82780.png" alt="&quot;PB&amp;J&quot; Oat Bites" loading="lazy">
         <div class="item-info">
@@ -19202,11 +19308,11 @@ Seasoning Blend</div>
   </div>
 
   <div class="section" id="soup-chili-meals">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Soup, Chili &amp; Meals" class="section-header" onclick="toggle(this)">
       <span>Soup, Chili &amp; Meals <span class="section-count">(26)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="4.99" data-sku="063216">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20908/63216.png" alt="Autumnal Harvest Soup" loading="lazy">
         <div class="item-info">
@@ -19601,11 +19707,11 @@ Seasoning Blend</div>
   </div>
 
   <div class="section" id="honeys-syrups-nectars">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Honeys, Syrups &amp; Nectars" class="section-header" onclick="toggle(this)">
       <span>Honeys, Syrups &amp; Nectars <span class="section-count">(12)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="4.49" data-sku="079715">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20909/79715.png" alt="Bourbon Vanilla Bean Syrup" loading="lazy">
         <div class="item-info">
@@ -19790,11 +19896,11 @@ Seasoning Blend</div>
   </div>
 
   <div class="section" id="chips-crackers-crunchy-bites">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Chips, Crackers &amp; Crunchy Bites" class="section-header" onclick="toggle(this)">
       <span>Chips, Crackers &amp; Crunchy Bites <span class="section-count">(118)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="4.49" data-sku="070721">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m21001/70721.png" alt="Almond Butter Filled Pretzel Nuggets" loading="lazy">
         <div class="item-info">
@@ -21569,11 +21675,11 @@ Seasoning Blend</div>
   </div>
 
   <div class="section" id="candies-cookies">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Candies &amp; Cookies" class="section-header" onclick="toggle(this)">
       <span>Candies &amp; Cookies <span class="section-count">(243)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="2.99" data-sku="078684">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m21002/78684.png" alt="70% Peruvian Cacao Dark Chocolate Bar" loading="lazy">
         <div class="item-info">
@@ -25223,11 +25329,11 @@ Seasoning Blend</div>
   </div>
 
   <div class="section" id="nuts-dried-fruits-seeds">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Nuts, Dried Fruits &amp; Seeds" class="section-header" onclick="toggle(this)">
       <span>Nuts, Dried Fruits &amp; Seeds <span class="section-count">(53)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.29" data-sku="010009">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m21003/10009.png" alt="50% Less Salt Roasted &amp; Salted Peanuts" loading="lazy">
         <div class="item-info">
@@ -26027,11 +26133,11 @@ Seasoning Blend</div>
   </div>
 
   <div class="section" id="bars-jerky">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Bars &amp; Jerky" class="section-header" onclick="toggle(this)">
       <span>Bars &amp; Jerky <span class="section-count">(20)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.99" data-sku="059322">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m21004/59322.png" alt="ABC Bars" loading="lazy">
         <div class="item-info">
@@ -26336,11 +26442,11 @@ Seasoning Blend</div>
   </div>
 
   <div class="section" id="frozen-appetizers">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Frozen Appetizers" class="section-header" onclick="toggle(this)">
       <span>Frozen Appetizers <span class="section-count">(34)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="5.99" data-sku="065467">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20602/65467.png" alt="8 Mini Croissants" loading="lazy">
         <div class="item-info">
@@ -26855,11 +26961,11 @@ Seasoning Blend</div>
   </div>
 
   <div class="section" id="frozen-entrees-sides">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Frozen Entrees &amp; Sides" class="section-header" onclick="toggle(this)">
       <span>Frozen Entrees &amp; Sides <span class="section-count">(185)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="4.49" data-sku="081173">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20602/81173.png" alt="3 Cheese Pasta with Eggplant" loading="lazy">
         <div class="item-info">
@@ -29639,11 +29745,11 @@ Seasoning Blend</div>
   </div>
 
   <div class="section" id="frozen-fruit-vegetables">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Frozen Fruit &amp; Vegetables" class="section-header" onclick="toggle(this)">
       <span>Frozen Fruit &amp; Vegetables <span class="section-count">(10)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="2.99" data-sku="077333">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20603/77333.png" alt="Artichoke Bottoms" loading="lazy">
         <div class="item-info">
@@ -29798,11 +29904,11 @@ Seasoning Blend</div>
   </div>
 
   <div class="section" id="frozen-desserts">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Frozen Desserts" class="section-header" onclick="toggle(this)">
       <span>Frozen Desserts <span class="section-count">(113)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="4.99" data-sku="071873">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m20604/71873.png" alt="12 Cranberry Orange Bars" loading="lazy">
         <div class="item-info">
@@ -31504,11 +31610,11 @@ ICE CREAM</div>
   </div>
 
   <div class="section" id="juices-more">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Juices &amp; More" class="section-header" onclick="toggle(this)">
       <span>Juices &amp; More <span class="section-count">(70)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.99" data-sku="053902">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m301/53902.png" alt="100% Honeycrisp Apple Cider Unfiltered" loading="lazy">
         <div class="item-info">
@@ -32563,11 +32669,11 @@ ICE CREAM</div>
   </div>
 
   <div class="section" id="water">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Water" class="section-header" onclick="toggle(this)">
       <span>Water <span class="section-count">(25)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.79" data-sku="177620">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m302/77620.png" alt="Black Cherry Vanilla Sparkling Water" loading="lazy">
         <div class="item-info">
@@ -32947,11 +33053,11 @@ ICE CREAM</div>
   </div>
 
   <div class="section" id="non-dairy-beverages">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Non-Dairy Beverages" class="section-header" onclick="toggle(this)">
       <span>Non-Dairy Beverages <span class="section-count">(14)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.49" data-sku="075514">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m303/75514.png" alt="Chocolate Almond Protein Smoothie Beverage" loading="lazy">
         <div class="item-info">
@@ -33166,11 +33272,11 @@ ICE CREAM</div>
   </div>
 
   <div class="section" id="coffee-tea">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Coffee &amp; Tea" class="section-header" onclick="toggle(this)">
       <span>Coffee &amp; Tea <span class="section-count">(90)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="5.99" data-sku="093200">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m304/93200.png" alt="100% Colombian Instant Coffee" loading="lazy">
         <div class="item-info">
@@ -34525,11 +34631,11 @@ ICE CREAM</div>
   </div>
 
   <div class="section" id="sodas-mixers">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Sodas &amp; Mixers" class="section-header" onclick="toggle(this)">
       <span>Sodas &amp; Mixers <span class="section-count">(31)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="4.49" data-sku="174345">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m305/74345.png" alt="Brewed Ginger Beer" loading="lazy">
         <div class="item-info">
@@ -34999,11 +35105,11 @@ ICE CREAM</div>
   </div>
 
   <div class="section" id="wine-beer-liquor">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Wine, Beer &amp; Liquor" class="section-header" onclick="toggle(this)">
       <span>Wine, Beer &amp; Liquor <span class="section-count">(175)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="6.99" data-sku="081576">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m306/wine/81576.png" alt="Almond Creek Almond Flavored Sparkling Wine" loading="lazy">
         <div class="item-info">
@@ -37633,11 +37739,11 @@ ICE CREAM</div>
   </div>
 
   <div class="section" id="household-essentials">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Household Essentials" class="section-header" onclick="toggle(this)">
       <span>Household Essentials <span class="section-count">(79)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="3.99" data-sku="074545">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m501/74545.png" alt="All Purpose Disinfectant Cleaner" loading="lazy">
         <div class="item-info">
@@ -38827,11 +38933,11 @@ ICE CREAM</div>
   </div>
 
   <div class="section" id="face-body">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Face &amp; Body" class="section-header" onclick="toggle(this)">
       <span>Face &amp; Body <span class="section-count">(90)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="19.99" data-sku="066220">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m502/66220.png" alt="12 Days of Beauty - A Curated Collection" loading="lazy">
         <div class="item-info">
@@ -40186,11 +40292,11 @@ ICE CREAM</div>
   </div>
 
   <div class="section" id="pet-stuff">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Pet Stuff" class="section-header" onclick="toggle(this)">
       <span>Pet Stuff <span class="section-count">(33)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="7.99" data-sku="081699">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/m503/81699.png" alt="Advent Calendar for Cats" loading="lazy">
         <div class="item-info">
@@ -40690,11 +40796,11 @@ ICE CREAM</div>
   </div>
 
   <div class="section" id="nutritional-supplements">
-    <h2 class="section-header" onclick="toggle(this)">
+    <h2 data-category="Nutritional Supplements" class="section-header" onclick="toggle(this)">
       <span>Nutritional Supplements <span class="section-count">(6)</span></span>
       <span class="chevron">&#9660;</span>
     </h2>
-    <div class="section-items" style="display:none">
+    <div class="section-items">
       <div class="item zero" data-price="1.69" data-sku="058191">
         <img src="https://www.traderjoes.com/content/dam/trjo/products/M504/58191.png" alt="Cranberry &amp; Herb Supplement Drops" loading="lazy">
         <div class="item-info">
@@ -40813,18 +40919,27 @@ ICE CREAM</div>
     }
 
     // Router
+    let currentView = null;
     function router() {
       const hash = location.hash.slice(1);
       const storeView = document.getElementById('store-view');
       const shopView = document.getElementById('shop-view');
       const storeTotal = document.getElementById('store-total-bar');
 
+      // Ignore section anchor hashes — stay in current view
+      if (hash && hash !== 'store' && !hash.startsWith('shop') && hash !== '') {
+        if (currentView === 'store') return;
+      }
+
       if (hash === 'store') {
+        currentView = 'store';
         storeView.style.display = '';
         shopView.style.display = 'none';
         storeTotal.style.display = '';
         loadLists();
+        loadCustomProducts();
       } else {
+        currentView = 'shop';
         storeView.style.display = 'none';
         shopView.style.display = '';
         storeTotal.style.display = 'none';
@@ -40872,12 +40987,15 @@ ICE CREAM</div>
     }
 
     let saveTimer = null;
+    let saving = false;
     function queueSave() {
       clearTimeout(saveTimer);
       saveTimer = setTimeout(saveList, 1000);
     }
 
     async function saveList() {
+      if (saving) return;
+      saving = true;
       const listId = document.getElementById('list-picker').value;
       const items = [];
       document.querySelectorAll('#store-view .item').forEach(el => {
@@ -40894,7 +41012,7 @@ ICE CREAM</div>
       setTimeout(() => { totalEl.textContent = '$' + items.reduce((s, i) => {
         const el = document.querySelector('#store-view .item[data-sku="' + i.sku + '"]');
         return s + (el ? parseFloat(el.dataset.price) * i.quantity : 0);
-      }, 0).toFixed(2); }, 1200);
+      }, 0).toFixed(2); saving = false; }, 1200);
     }
 
     async function loadShopView(listId) {
@@ -40909,6 +41027,17 @@ ICE CREAM</div>
 
       document.getElementById('shop-label').textContent = data.list.label;
       const products = getProductMap();
+
+      // Merge custom products from API
+      const customProducts = await apiGet('getCustomProducts');
+      customProducts.forEach(cp => {
+        products[cp.sku] = {
+          name: cp.name,
+          price: parseFloat(cp.price) || 0,
+          image: cp.image_url || 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect fill=%22%23f0f0f0%22 width=%2264%22 height=%2264%22 rx=%228%22/><text x=%2232%22 y=%2236%22 text-anchor=%22middle%22 fill=%22%23ccc%22 font-size=%2224%22>?</text></svg>',
+          size: cp.size || '',
+        };
+      });
 
       let html = '';
       data.items.forEach(item => {
@@ -40939,6 +41068,158 @@ ICE CREAM</div>
       if (list) apiPost({ action: 'toggleChecked', listId: list.list_id, sku });
     }
 
+    // Track which section was last opened for category pre-fill
+    let lastOpenedCategory = '';
+
+    // Category list for the dropdown
+    const categoryNames = [];
+    document.querySelectorAll('#store-view .section-header').forEach(h => {
+      if (h.dataset.category) categoryNames.push(h.dataset.category);
+    });
+
+    function populateCategoryDropdown() {
+      const sel = document.getElementById('cf-category');
+      sel.innerHTML = categoryNames.map(c =>
+        '<option value="' + c + '"' + (c === lastOpenedCategory ? ' selected' : '') + '>' + c + '</option>'
+      ).join('');
+    }
+
+    function openCustomForm(editSku, category) {
+      if (category) lastOpenedCategory = category;
+      populateCategoryDropdown();
+      const title = document.getElementById('custom-form-title');
+      const del = document.getElementById('cf-delete');
+      if (editSku) {
+        // Edit mode — find the item
+        const el = document.querySelector('.item[data-sku="' + editSku + '"]');
+        if (el) {
+          title.textContent = 'Edit Custom Item';
+          document.getElementById('cf-sku').value = editSku;
+          document.getElementById('cf-name').value = el.querySelector('.item-name').textContent;
+          document.getElementById('cf-price').value = el.dataset.price;
+          document.getElementById('cf-size').value = el.querySelector('.item-size').textContent;
+          document.getElementById('cf-image').value = el.querySelector('img').src || '';
+          del.style.display = '';
+        }
+      } else {
+        title.textContent = 'Add Custom Item';
+        document.getElementById('cf-sku').value = '';
+        document.getElementById('cf-name').value = '';
+        document.getElementById('cf-price').value = '';
+        document.getElementById('cf-size').value = '';
+        document.getElementById('cf-image').value = '';
+        del.style.display = 'none';
+      }
+      document.getElementById('custom-form').classList.add('open');
+    }
+
+    function closeCustomForm() {
+      document.getElementById('custom-form').classList.remove('open');
+    }
+
+    async function saveCustomProduct() {
+      const name = document.getElementById('cf-name').value.trim();
+      if (!name) { alert('Name is required'); return; }
+
+      const saveBtn = document.querySelector('.btn-save');
+      saveBtn.disabled = true;
+      saveBtn.style.opacity = '0.5';
+      saveBtn.textContent = 'Saving...';
+
+      const existingSku = document.getElementById('cf-sku').value;
+      const sku = existingSku || 'custom-' + Date.now();
+      const product = {
+        sku,
+        name,
+        price: parseFloat(document.getElementById('cf-price').value) || 0,
+        size: document.getElementById('cf-size').value.trim() || '',
+        category: document.getElementById('cf-category').value,
+        image_url: document.getElementById('cf-image').value.trim() || '',
+      };
+
+      const action = existingSku ? 'editCustomProduct' : 'addCustomProduct';
+      const body = existingSku ? { action, sku: existingSku, product } : { action, product };
+      await apiPost(body);
+
+      saveBtn.disabled = false;
+      saveBtn.style.opacity = '';
+      saveBtn.textContent = 'Save';
+
+      // Add/update in DOM
+      let targetEl;
+      if (existingSku) {
+        targetEl = document.querySelector('.item[data-sku="' + existingSku + '"]');
+        if (targetEl) {
+          targetEl.querySelector('.item-name').textContent = product.name;
+          targetEl.querySelector('.item-size').textContent = product.size;
+          targetEl.dataset.price = product.price;
+          targetEl.querySelector('.item-price').textContent = '$' + product.price.toFixed(2);
+          if (product.image_url) targetEl.querySelector('img').src = product.image_url;
+        }
+      } else {
+        addCustomItemToDOM(product);
+        targetEl = document.querySelector('.item[data-sku="' + sku + '"]');
+        // Update category counter
+        document.querySelectorAll('#store-view .section-header').forEach(h => {
+          if (h.dataset.category === product.category) {
+            const countEl = h.querySelector('.section-count');
+            const current = parseInt(countEl.textContent.replace(/[()]/g, '')) || 0;
+            countEl.textContent = '(' + (current + 1) + ')';
+          }
+        });
+      }
+      closeCustomForm();
+
+      // Scroll to item and flash
+      if (targetEl) {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        targetEl.style.transition = 'background 0.3s';
+        targetEl.style.background = '#fffde7';
+        setTimeout(() => { targetEl.style.background = ''; }, 1500);
+      }
+    }
+
+    async function deleteCustomProduct() {
+      const sku = document.getElementById('cf-sku').value;
+      if (!sku || !confirm('Delete this custom item?')) return;
+      await apiPost({ action: 'deleteCustomProduct', sku });
+      const el = document.querySelector('.item[data-sku="' + sku + '"]');
+      if (el) el.remove();
+      closeCustomForm();
+    }
+
+    function addCustomItemToDOM(p) {
+      // Find matching category section, or fall back to first
+      let target = document.querySelector('#store-view .section-items');
+      if (p.category) {
+        document.querySelectorAll('#store-view .section-header').forEach(h => {
+          if (h.dataset.category === p.category) target = h.nextElementSibling;
+        });
+      }
+      if (!target) return;
+      const div = document.createElement('div');
+      div.className = 'item zero custom';
+      div.dataset.price = p.price.toFixed(2);
+      div.dataset.sku = p.sku;
+      const imgSrc = p.image_url || 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect fill=%22%23f0f0f0%22 width=%2264%22 height=%2264%22 rx=%228%22/><text x=%2232%22 y=%2236%22 text-anchor=%22middle%22 fill=%22%23ccc%22 font-size=%2224%22>?</text></svg>';
+      div.innerHTML =
+        '<button class="edit-btn" onclick="openCustomForm(\'' + p.sku + '\')">&#9998;</button>' +
+        '<img src="' + imgSrc + '" alt="' + p.name + '" loading="lazy">' +
+        '<div class="item-info"><div class="item-name">' + p.name + '</div><div class="item-size">' + (p.size || '') + '</div></div>' +
+        '<div class="item-right"><div class="item-price">$' + p.price.toFixed(2) + '</div>' +
+        '<div class="stepper"><button class="step-btn minus" onclick="dec(this)">-</button><span class="qty">0</span><button class="step-btn plus" onclick="inc(this)">+</button></div></div>';
+      target.insertBefore(div, target.firstChild);
+    }
+
+    // Load custom products on store view init
+    async function loadCustomProducts() {
+      const products = await apiGet('getCustomProducts');
+      products.forEach(p => {
+        p.price = parseFloat(p.price) || 0;
+        addCustomItemToDOM(p);
+      });
+    }
+
     function showModal(image, name, size, price) {
       document.getElementById('modal-img').src = image;
       document.getElementById('modal-name').textContent = name;
@@ -40964,6 +41245,19 @@ ICE CREAM</div>
 
     window.addEventListener('hashchange', router);
     router();
+
+    // Double-tap on list label to open Store View with current list selected
+    let lastTap = 0;
+    const shopLabel = document.getElementById('shop-label');
+    shopLabel.addEventListener('click', (e) => {
+      e.preventDefault();
+      const now = Date.now();
+      if (now - lastTap < 400) {
+        location.hash = 'store';
+      }
+      lastTap = now;
+    });
+    shopLabel.addEventListener('selectstart', e => e.preventDefault());
     function update() {
       let total = 0, count = 0;
       document.querySelectorAll('#store-view .item').forEach(el => {
@@ -40988,14 +41282,52 @@ ICE CREAM</div>
       if (v > 0) qty.textContent = v - 1;
       update();
     }
-    function toggle(header) {
+    function toggleNav(label) {
+      const pills = label.nextElementSibling;
+      const chevron = label.querySelector('.nav-group-chevron');
+      pills.classList.toggle('open');
+      chevron.textContent = pills.classList.contains('open') ? '▲' : '▼';
+    }
+
+    function toggle(header, forceOpen) {
       const items = header.nextElementSibling;
       const chevron = header.querySelector('.chevron');
-      const open = items.style.display !== 'none';
-      items.style.display = open ? 'none' : 'block';
-      chevron.innerHTML = open ? '&#9660;' : '&#9650;';
-      header.classList.toggle('open', !open);
+      const isOpen = items.classList.contains('open');
+      if (forceOpen && isOpen) return;
+      const opening = forceOpen || !isOpen;
+      items.classList.toggle('open', opening);
+      chevron.innerHTML = opening ? '&#9650;' : '&#9660;';
+      header.classList.toggle('open', opening);
+      if (opening) lastOpenedCategory = header.dataset.category || '';
     }
+
+    // Add "+" button to each section header
+    document.querySelectorAll('#store-view .section-header').forEach(header => {
+      const catName = header.dataset.category;
+      const btn = document.createElement('button');
+      btn.className = 'section-add';
+      btn.textContent = '+';
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        openCustomForm(null, catName);
+      });
+      const countSpan = header.querySelector('.section-count');
+      countSpan.parentElement.appendChild(btn);
+    });
+
+    // Nav pill clicks: scroll to section and open it
+    document.querySelectorAll('.nav-item').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const section = document.getElementById(id);
+        if (section) {
+          const header = section.querySelector('.section-header');
+          if (header) toggle(header, true);
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
     function search(q) {
       q = q.toLowerCase().trim();
       document.querySelectorAll('.section').forEach(sec => {
@@ -41013,24 +41345,18 @@ ICE CREAM</div>
         const count = header.querySelector('.section-count');
         if (q) {
           sec.style.display = visible ? '' : 'none';
-          itemsWrap.style.display = visible ? 'block' : 'none';
-          chevron.innerHTML = '&#9650;';
+          itemsWrap.classList.toggle('open', visible > 0);
+          header.classList.toggle('open', visible > 0);
+          chevron.innerHTML = visible ? '&#9650;' : '&#9660;';
           count.textContent = '(' + visible + ')';
         } else {
           sec.style.display = '';
-          itemsWrap.style.display = 'none';
+          itemsWrap.classList.remove('open');
+          header.classList.remove('open');
           chevron.innerHTML = '&#9660;';
           count.textContent = '(' + items.length + ')';
         }
       });
-      // Keep Fruits open when clearing search
-      if (!q) {
-        const fruits = document.getElementById('fruits');
-        if (fruits) {
-          fruits.querySelector('.section-items').style.display = 'block';
-          fruits.querySelector('.chevron').innerHTML = '&#9650;';
-        }
-      }
     }
   </script>
 </body>

@@ -78,6 +78,17 @@ function doPost(e) {
     return jsonResponse({ ok: true });
   }
 
+  if (action === 'removeListItem') {
+    const sheet = getSheet('list_items');
+    const data = sheet.getDataRange().getValues();
+    for (let i = data.length - 1; i >= 1; i--) {
+      if (String(data[i][0]) === String(body.listId) && String(data[i][1]) === String(body.sku)) {
+        sheet.deleteRow(i + 1);
+      }
+    }
+    return jsonResponse({ ok: true });
+  }
+
   if (action === 'toggleChecked') {
     const sheet = getSheet('list_items');
     const data = sheet.getDataRange().getValues();

@@ -279,24 +279,46 @@
     }
     /* Shop View */
     .shop-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      position: relative;
+      overflow: hidden;
       background: #fff;
       border-radius: 12px;
-      padding: 14px;
       margin-bottom: 8px;
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
       box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .shop-item-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px;
+      background: #fff;
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
-      transition: opacity 0.2s;
+      position: relative;
+      z-index: 1;
+      touch-action: pan-y;
+      transition: transform 0.25s ease, opacity 0.2s;
     }
-    .shop-item.checked {
+    .shop-item.swiped .shop-item-content { transform: translateX(-80px); }
+    .shop-item.checked .shop-item-content {
       opacity: 0.4;
       text-decoration: line-through;
+    }
+    .shop-item-delete {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 80px;
+      background: #c81e1e;
+      color: #fff;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      z-index: 0;
     }
     .shop-check {
       width: 32px;
@@ -40904,7 +40926,7 @@ ICE CREAM</div>
   </div><!-- /store-view -->
 
   <script>
-    const API = 'https://script.google.com/macros/s/AKfycbzkQrkvU16jQF5SLKw2ZYWRrx2JxzSZroWOpB7t9nE_ByN1ItFLz0k0JKARjEsOebC21w/exec';
+    const API = 'https://script.google.com/macros/s/AKfycbx74Pzy2XRQP6Q2EDVRdegPJR9cWnNm1Ada2TkrhvrTsGefL8KUB_I6enBIkAZbHI50Cw/exec';
     const T = ['UXClpf3FxWOy','9yyc9tY2R_Nc','bL9CkKweDecA','acuz4RE'].join('');
 
     async function apiGet(action, params = {}) {
@@ -41045,10 +41067,13 @@ ICE CREAM</div>
         if (!p) return;
         const checked = item.checked === true || item.checked === 'TRUE';
         html += '<div class="shop-item' + (checked ? ' checked' : '') + '" data-sku="' + item.sku + '" data-price="' + p.price + '" data-qty="' + item.quantity + '">' +
-          '<div class="shop-check" onclick="toggleCheck(this.parentElement)">' + (checked ? '&#10003;' : '') + '</div>' +
-          '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy" onclick="showModal(\'' + p.image + '\',\'' + p.name.replace(/'/g, "\\'") + '\',\'' + p.size + '\',\'' + p.price.toFixed(2) + '\')">' +
-          '<div class="shop-info" onclick="showModal(\'' + p.image + '\',\'' + p.name.replace(/'/g, "\\'") + '\',\'' + p.size + '\',\'' + p.price.toFixed(2) + '\')"><div class="shop-name">' + p.name + '</div></div>' +
-          '<div class="shop-qty">' + item.quantity + '</div>' +
+          '<div class="shop-item-content">' +
+            '<div class="shop-check" onclick="toggleCheck(this.closest(\'.shop-item\'))">' + (checked ? '&#10003;' : '') + '</div>' +
+            '<img src="' + p.image + '" alt="' + p.name + '" loading="lazy" onclick="showModal(\'' + p.image + '\',\'' + p.name.replace(/'/g, "\\'") + '\',\'' + p.size + '\',\'' + p.price.toFixed(2) + '\')">' +
+            '<div class="shop-info" onclick="showModal(\'' + p.image + '\',\'' + p.name.replace(/'/g, "\\'") + '\',\'' + p.size + '\',\'' + p.price.toFixed(2) + '\')"><div class="shop-name">' + p.name + '</div></div>' +
+            '<div class="shop-qty">' + item.quantity + '</div>' +
+          '</div>' +
+          '<button type="button" class="shop-item-delete" onclick="deleteShopItem(this.parentElement)">Delete</button>' +
           '</div>';
       });
       shopItems.innerHTML = html;
@@ -41241,6 +41266,81 @@ ICE CREAM</div>
       });
       document.getElementById('shop-total').textContent = '$' + total.toFixed(2);
       document.getElementById('shop-progress-bottom').textContent = checked + ' of ' + items.length;
+    }
+
+    // Swipe-left to reveal delete on Shop View rows
+    let _swipe = null;
+    document.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      const item = e.target.closest('.shop-item');
+      if (!item || !document.getElementById('shop-view').contains(item)) return;
+      if (e.target.closest('.shop-item-delete')) return;
+      _swipe = {
+        item,
+        content: item.querySelector('.shop-item-content'),
+        startX: e.clientX,
+        startY: e.clientY,
+        base: item.classList.contains('swiped') ? -80 : 0,
+        axis: null,
+        pointerId: e.pointerId,
+      };
+    });
+    document.addEventListener('pointermove', (e) => {
+      if (!_swipe || e.pointerId !== _swipe.pointerId) return;
+      const dx = e.clientX - _swipe.startX;
+      const dy = e.clientY - _swipe.startY;
+      if (!_swipe.axis) {
+        if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
+          _swipe.axis = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
+        } else return;
+      }
+      if (_swipe.axis !== 'h') return;
+      const off = Math.max(-80, Math.min(0, _swipe.base + dx));
+      _swipe.content.style.transition = 'none';
+      _swipe.content.style.transform = 'translateX(' + off + 'px)';
+    });
+    function _endSwipe(e) {
+      if (!_swipe) return;
+      const s = _swipe;
+      _swipe = null;
+      s.content.style.transition = '';
+      s.content.style.transform = '';
+      if (s.axis !== 'h') return;
+      const dx = (e && e.clientX != null) ? e.clientX - s.startX : 0;
+      const final = s.base + dx;
+      s.item.classList.toggle('swiped', final < -40);
+    }
+    document.addEventListener('pointerup', _endSwipe);
+    document.addEventListener('pointercancel', _endSwipe);
+
+    // Tap anywhere outside delete closes any open swipe and suppresses the tap
+    document.addEventListener('click', (e) => {
+      const swiped = document.querySelectorAll('.shop-item.swiped');
+      if (!swiped.length) return;
+      if (e.target.closest('.shop-item-delete')) return;
+      swiped.forEach(r => r.classList.remove('swiped'));
+      if (e.target.closest('.shop-item')) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    }, true);
+
+    async function deleteShopItem(row) {
+      const sku = row.dataset.sku;
+      const name = row.querySelector('.shop-name').textContent;
+      if (!confirm('Remove "' + name + '" from list?')) {
+        row.classList.remove('swiped');
+        return;
+      }
+      const listLabel = document.getElementById('shop-label').textContent;
+      const lists = await apiGet('getLists');
+      const list = lists.find(l => l.label === listLabel);
+      if (!list) return;
+      row.style.transition = 'opacity 0.2s';
+      row.style.opacity = '0';
+      await apiPost({ action: 'removeListItem', listId: list.list_id, sku });
+      row.remove();
+      updateShopTotals();
     }
 
     window.addEventListener('hashchange', router);

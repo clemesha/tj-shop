@@ -1,8 +1,9 @@
-# TJ Shop
+# TJ Shop (v0)
 
 Trader Joe's shopping list with live product data, images, and prices from the TJ GraphQL API.
 
-**Live page:** https://clemesha.github.io/tj-shop/
+> **Status:** archived as v0 on 2026-05-15. Work on v1 has begun at the repo root. The live URL https://clemesha.github.io/tj-shop/ will 404 until v1 ships a root `index.html` (or a redirect is added). v0 is still viewable at https://clemesha.github.io/tj-shop/v0/.
+
 **Google Sheet:** https://docs.google.com/spreadsheets/d/1ouaydzEr1hX7_WqjJRJ2w5nExw-tJhz1X4IWIL32NHM/edit
 
 ## Fetching product data

@@ -1,1 +1,18 @@
+# dependencies
 node_modules/
+
+# rust build artifacts
+/backend/target/
+/target/
+
+# env files (sample is committed)
+.env
+.env.local
+.env.*.local
+
+# frontend build output
+/frontend/dist/
+
+# editor / OS
+.DS_Store
+*.swp

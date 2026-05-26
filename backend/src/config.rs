@@ -24,8 +24,7 @@ pub struct Config {
 
 impl Config {
     pub fn from_env() -> Result<Self> {
-        let database_url = std::env::var("DATABASE_URL")
-            .context("DATABASE_URL is required")?;
+        let database_url = std::env::var("DATABASE_URL").context("DATABASE_URL is required")?;
 
         let listen_addr = std::env::var("LISTEN_ADDR")
             .unwrap_or_else(|_| "127.0.0.1:3000".to_string())

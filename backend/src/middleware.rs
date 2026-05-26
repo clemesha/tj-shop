@@ -1,18 +1,20 @@
 use std::time::Duration;
 
+use axum::http::StatusCode;
 use tower_http::cors::{Any, CorsLayer};
 use tower_http::timeout::TimeoutLayer;
 use tower_http::trace::TraceLayer;
 
 use crate::config::AppEnv;
 
-pub fn trace_layer() -> TraceLayer<tower_http::classify::SharedClassifier<tower_http::classify::ServerErrorsAsFailures>>
+pub fn trace_layer()
+-> TraceLayer<tower_http::classify::SharedClassifier<tower_http::classify::ServerErrorsAsFailures>>
 {
     TraceLayer::new_for_http()
 }
 
 pub fn timeout_layer() -> TimeoutLayer {
-    TimeoutLayer::new(Duration::from_secs(15))
+    TimeoutLayer::with_status_code(StatusCode::REQUEST_TIMEOUT, Duration::from_secs(15))
 }
 
 pub fn dev_cors_layer(app_env: AppEnv) -> Option<CorsLayer> {

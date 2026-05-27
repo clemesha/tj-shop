@@ -79,6 +79,20 @@ behavior over many narrow tests that pin internal structure.
 - Test fixtures live in `tests/fixtures/`. Helper code shared across
   tests lives in `tests/common/mod.rs`.
 
+## Adding a migration
+
+1. Write the SQL in `backend/migrations/YYYYMMDDHHMMSS_name.sql`.
+2. **Force a clean rebuild of the binary** so `sqlx::migrate!()` re-expands:
+   ```
+   cargo clean -p tj-shop && cargo run
+   ```
+   sqlx's compile-time migration discovery doesn't reliably invalidate
+   cargo's incremental cache when only the `migrations/` dir changes.
+   Symptom: backend starts but `_sqlx_migrations` stays at 0 rows.
+3. `#[sqlx::test]` integration tests pick up new migrations automatically
+   on the next `cargo test` (test binaries re-expand the macro fresh
+   because they always link against the latest code).
+
 ## What not to do
 
 - No repository traits, no service layer, no clean-architecture

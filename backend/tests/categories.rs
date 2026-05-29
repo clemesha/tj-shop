@@ -14,7 +14,7 @@ use tj_shop::{
 };
 
 #[sqlx::test]
-async fn list_products_returns_seeded_catalog(pool: PgPool) {
+async fn list_categories_returns_seeded_set(pool: PgPool) {
     let state = AppState {
         db: pool,
         config: Arc::new(Config {
@@ -28,7 +28,7 @@ async fn list_products_returns_seeded_catalog(pool: PgPool) {
     let response = router(state)
         .oneshot(
             Request::builder()
-                .uri("/api/products")
+                .uri("/api/categories")
                 .body(Body::empty())
                 .unwrap(),
         )
@@ -39,30 +39,35 @@ async fn list_products_returns_seeded_catalog(pool: PgPool) {
 
     let body_bytes = response.into_body().collect().await.unwrap().to_bytes();
     let body: Value = serde_json::from_slice(&body_bytes).unwrap();
-    let products = body.as_array().expect("products should be a JSON array");
+    let categories = body.as_array().expect("categories should be a JSON array");
 
-    assert!(
-        products.len() > 2000,
-        "expected the full seed catalog, got {} products",
-        products.len()
+    assert_eq!(
+        categories.len(),
+        55,
+        "expected the seeded 55 categories, got {}",
+        categories.len()
     );
 
-    let bananas = products
+    let sliced_bread = categories
         .iter()
-        .find(|p| p["sku"] == "048053")
-        .expect("Bananas (sku 048053) should be in the catalog");
-
-    assert_eq!(bananas["name"], "Bananas");
-    assert_eq!(bananas["size"], "1 Each");
-    assert_eq!(bananas["is_manual"], false);
-    assert_eq!(bananas["category_name"], "Fruits");
-    assert!(bananas["id"].as_str().is_some(), "id should be a UUID string");
+        .find(|c| c["tj_id"] == "14")
+        .expect("category tj_id=14 (Sliced Bread) should exist");
+    assert_eq!(sliced_bread["name"], "Sliced Bread");
     assert!(
-        bananas["category_id"].as_str().is_some(),
-        "category_id should be set"
+        sliced_bread["position"].as_i64().is_some(),
+        "position should be an integer"
     );
     assert!(
-        bananas["image_url"].as_str().unwrap().contains("48053.png"),
-        "image_url should contain the SKU"
+        sliced_bread["id"].as_str().is_some(),
+        "id should be a UUID string"
+    );
+
+    let positions: Vec<i64> = categories
+        .iter()
+        .map(|c| c["position"].as_i64().unwrap())
+        .collect();
+    assert!(
+        positions.windows(2).all(|w| w[0] <= w[1]),
+        "categories should be sorted by position ascending"
     );
 }

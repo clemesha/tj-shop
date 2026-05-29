@@ -15,6 +15,7 @@ struct Product {
     size: Option<String>,
     image_url: Option<String>,
     category_id: Option<Uuid>,
+    category_name: Option<String>,
     is_manual: bool,
 }
 
@@ -26,9 +27,18 @@ async fn list_products(State(state): State<AppState>) -> Result<Json<Vec<Product
     let products = sqlx::query_as!(
         Product,
         r#"
-        select id, sku, name, size, image_url, category_id, is_manual
-        from products
-        order by name
+        select
+            p.id,
+            p.sku,
+            p.name,
+            p.size,
+            p.image_url,
+            p.category_id,
+            c.name as "category_name?",
+            p.is_manual
+        from products p
+        left join categories c on c.id = p.category_id
+        order by p.name
         "#
     )
     .fetch_all(&state.db)
